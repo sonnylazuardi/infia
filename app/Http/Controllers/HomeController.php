@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\Contact;
+use Illuminate\Http\Request;
+
 class HomeController extends Controller {
 
 	/*
@@ -14,23 +17,26 @@ class HomeController extends Controller {
 	*/
 
 	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
-
-	/**
 	 * Show the application dashboard to the user.
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
 	{
 		return view('home');
 	}
 
+
+	public function getContact()
+	{
+		return view('contact');
+	}
+
+	public function postContact(Request $request)
+	{
+		$contact = new Contact($request->all());
+		$contact->save();
+		return redirect('/home/contact')
+			->with('alert', 'Terima kasih, pesan Anda sudah terkirim silakan tunggu respon dari kami');
+	}
 }

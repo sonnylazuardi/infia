@@ -1,17 +1,35 @@
 @extends('app')
 
 @section('content')
-<div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
+<!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div id="owl-example" class="owl-carousel">
+      <div class="full-image"> <img src="{{asset('img/slider.jpg')}}" alt=""> </div>
+      <div class="full-image"> <img src="{{asset('img/slider.jpg')}}" alt=""> </div>
+      <div class="full-image"> <img src="{{asset('img/slider.jpg')}}" alt=""> </div>
+      <div class="full-image"> <img src="{{asset('img/slider.jpg')}}" alt=""> </div>
+      <div class="full-image"> <img src="{{asset('img/slider.jpg')}}" alt=""> </div>
+      <div class="full-image"> <img src="{{asset('img/slider.jpg')}}" alt=""> </div>
+      <div class="full-image"> <img src="{{asset('img/slider.jpg')}}" alt=""> </div>
+    </div>
+  </div>
+  
+@endsection
 
-				<div class="panel-body">
-					You are logged in!
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+@section('script')
+  <script>
+    $(document).ready(function() {
+      $("#owl-example").owlCarousel({
+        navigation : true, 
+        singleItem: true,
+        navigationText: [
+          "<i class='fa fa-chevron-left'></i>",
+          "<i class='fa fa-chevron-right'></i>"
+        ],
+      });
+      $(".full-image").imgLiquid({
+        fill: false
+      });
+    });
+  </script>
 @endsection

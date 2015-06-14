@@ -11,11 +11,22 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'HomeController@getIndex');
 
-Route::get('home', 'HomeController@index');
+Route::controller('home', 'HomeController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+Route::group(['middleware'=>'auth', 'prefix'=>'admin'], function() {
+
+  Route::controller('news', 'Admin\NewsController');
+
+  Route::controller('contact', 'Admin\ContactController');
+
+  Route::controller('user', 'Admin\UserController');
+
+});

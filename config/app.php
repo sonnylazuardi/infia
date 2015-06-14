@@ -145,6 +145,9 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
+		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+		'Barryvdh\Elfinder\ElfinderServiceProvider',
+
 	],
 
 	/*
