@@ -40,6 +40,15 @@
                     <a href="{{url('/admin/news')}}" class="active"><i class="fa fa-newspaper-o fa-fw"></i> News</a>
                 </li>
                 <li>
+                    <a href="{{url('/admin/portfolio')}}" class="active"><i class="fa fa-mobile fa-fw"></i> Portfolio</a>
+                </li>
+                <li>
+                    <a href="{{url('/admin/project')}}" class="active"><i class="fa fa-suitcase fa-fw"></i> Project</a>
+                </li>
+                <li>
+                    <a href="{{url('/admin/page')}}" class="active"><i class="fa fa-archive fa-fw"></i> Page</a>
+                </li>
+                <li>
                     <a href="{{url('/admin/contact')}}"><i class="fa fa-envelope fa-fw"></i> Contact</a>
                 </li>
                 <li>
