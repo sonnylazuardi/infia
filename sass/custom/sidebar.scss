@@ -1,0 +1,150 @@
+
+#wrapper {
+  padding-left: 59px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+
+  .logo {
+    background-position: -133px 25px;
+  }
+
+  &.toggled {
+    padding-left: 250px;
+
+    #sidebar-wrapper {
+      width: 250px;
+    }
+
+    #page-content-wrapper {
+      position: absolute;
+      margin-right: -250px;
+    }
+  }
+}
+
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 59px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: $yellow;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  // position: absolute;
+  padding: 0;
+  margin: 0;
+}
+
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    text-indent: 20px;
+    line-height: 40px;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: $light;
+      font-size: 1.2em;
+
+      &:hover {
+        text-decoration: none;
+        color: #fff;
+        background: rgba(255,255,255,0.2);
+      }
+
+      &:active, &:focus {
+        text-decoration: none;
+      } 
+
+      i {
+        width: 20px;
+        height: 20px;
+        margin-right: 30px;
+        margin-left: -15px;
+        text-align: center;
+      }
+    }
+
+    &.active {
+      background: #fff;
+
+      a {
+        color: $yellow-dark;
+      }
+    }
+  }
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: 250px;
+
+    .logo {
+      background-position: center;
+    }
+  }
+
+  #wrapper.toggled {
+    padding-left: 59px;
+
+    .logo {
+      background-position: -133px 25px;
+    }
+  }
+
+  #sidebar-wrapper {
+    width: 250px;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: 59px;
+  }
+
+  #page-content-wrapper {
+    // padding: 20px;
+    position: relative;
+  }
+
+  
+
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
