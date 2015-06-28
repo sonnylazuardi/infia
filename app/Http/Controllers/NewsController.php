@@ -16,8 +16,20 @@ class NewsController extends Controller {
 	public function getIndex()
 	{
 		$news = News::orderBy('created_at', 'desc')->get();
+		$pinnedNews = News::where('pinned',true)->first();
+		return view('news.index', compact('news','pinnedNews'));
+	}
 
-		return view('news.index', compact('news'));
+	public function getSingle($id){
+		$item = News::find($id);
+		return view('news.single', compact('item'));
+	}
+
+	public function getLayout2()
+	{
+		$news = News::orderBy('created_at', 'desc')->get();
+		$pinnedNews = News::where('pinned',true)->first();
+		return view('news.index2', compact('news','pinnedNews'));
 	}
 
 

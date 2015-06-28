@@ -14,6 +14,7 @@ class News extends Model {
     'content',
     'longitude',
     'latitude',
+    'pinned',
     'slug',
     'image',
   ];
