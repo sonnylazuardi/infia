@@ -6,7 +6,7 @@
     <div class="padding">
       <div class="container">
       	<div class="front-news-title">
-      		<h2> {{$pinnedNews->title}}</h2>
+      		<h2> {{@$pinnedNews->title}}</h2>
     		</div>
       	<div class="img-news-header-full">
       		<img class="" src="{{asset('/img/spongebob.jpg')}}"></img>
@@ -15,7 +15,7 @@
       		<a>..See More..</a>
       	</div>
       	<div class="front-news-full">
-      		<p>{!!$pinnedNews->content!!} </p>
+      		<p>{!!@$pinnedNews->content!!} </p>
       	</div>
       </div>
       <div class="container">
