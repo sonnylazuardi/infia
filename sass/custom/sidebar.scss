@@ -1,31 +1,46 @@
 
+#wrapper {
+  padding-left: 59px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 
-// .view-small {
-  #wrapper {
-    padding-left: 59px;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  .logo {
+    // background-position: -133px 25px;
+    background: url('../img/logo-small.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 60px;
+    width: 60px;
+  }
 
-    .logo {
-      background-position: -133px 25px;
+  &.toggled {
+    padding-left: 250px;
+
+    #sidebar-wrapper {
+      width: 250px;
     }
 
-    &.toggled {
-      padding-left: 250px;
-
-      #sidebar-wrapper {
-        width: 250px;
-      }
-
-      #page-content-wrapper {
-        position: absolute;
-        margin-right: -250px;
-      }
+    #page-content-wrapper {
+      position: absolute;
+      margin-right: -250px;
     }
   }
-// }
+
+  &.fixed {
+    padding-left: 59px;
+
+    #sidebar-wrapper {
+      width: 59px !important;
+    }
+
+    #page-content-wrapper {
+      position: absolute;
+      margin-right: -59px !important;
+    }
+  }
+}
 
 
 #sidebar-wrapper {
@@ -114,12 +129,16 @@
   background: none;
 }
 
-.view-large {
+@media(min-width:768px) {
   #wrapper {
     padding-left: 250px;
 
     .logo {
+      background: url('../img/logo.png') no-repeat;
+      background-size: contain;
       background-position: center;
+      height: 64px;
+      width: 250px;
     }
   }
 
@@ -127,7 +146,23 @@
     padding-left: 59px;
 
     .logo {
-      background-position: -133px 25px;
+      background: url('../img/logo-small.png') no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: 60px !important;
+      width: 60px !important;
+    }
+  }
+
+  #wrapper.fixed {
+    padding-left: 59px;
+
+    .logo {
+      background: url('../img/logo-small.png') no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: 60px !important;
+      width: 60px !important;
     }
   }
 
@@ -143,15 +178,9 @@
     // padding: 20px;
     position: relative;
   }
-
   
-
   #wrapper.toggled #page-content-wrapper {
     position: relative;
     margin-right: 0;
   }
-}
-
-@media(min-width:768px) {
-  @extend .view-large;
 } 

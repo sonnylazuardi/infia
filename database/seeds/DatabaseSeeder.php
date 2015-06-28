@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\News;
 use App\Contact;
+use App\Setting;
 
 class DatabaseSeeder extends Seeder {
 
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('UserTableSeeder');
 		$this->call('NewsTableSeeder');
 		$this->call('ContactTableSeeder');
+		$this->call('SettingTableSeeder');
 	}
 
 }
@@ -76,6 +78,25 @@ class ContactTableSeeder extends Seeder {
 
 		foreach ($contacts as $contact) {
 			Contact::create($contact);
+		}
+
+	}
+
+}
+
+class SettingTableSeeder extends Seeder {
+
+	public function run() {
+
+		DB::table('settings')->delete();
+
+		$settings = [
+			['key'=>'home_picture', 'value'=>'home.jpg'],
+			['key'=>'history', 'text'=>'Lorem ipsum dolor sit amet'],
+		];
+
+		foreach ($settings as $setting) {
+			Setting::create($setting);
 		}
 
 	}
