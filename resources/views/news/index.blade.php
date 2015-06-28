@@ -6,23 +6,23 @@
     <div class="padding">
       <div class="container">
       	<div class="front-news-title">
-      		<h2> {{$pinnedNews->title}}</h2>
+      		<h2> {{@$pinnedNews->title}}</h2>
     		</div>
       	<div class="img-news-header-full">
-      		<img class="" src="{{asset('/img/spongebob.jpg')}}"></img>
+      		<img class="" src="{{asset($pinnedNews->image)}}"></img>
       	</div>
       	<div class="front-news-more">
       		<a>..See More..</a>
       	</div>
       	<div class="front-news-full">
-      		<p>{!!$pinnedNews->content!!} </p>
+      		<p>{!!@$pinnedNews->content!!} </p>
       	</div>
       </div>
       <div class="container">
 	      <div class="row">
 	      	@foreach ($news as $item)
 	      	<div class="col-md-4">
-	      		<img class="img-news-header" src="{{asset('/img/spongebob.jpg')}}"></img>
+	      		<img class="img-news-header" src="{{asset($item->image)}}"></img>
 	      		<div class="front-news-title">
 	      			<h2> {{$item->title}}</h2>
 	      		</div>

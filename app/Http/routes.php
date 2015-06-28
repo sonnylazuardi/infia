@@ -31,8 +31,6 @@ Route::group(['middleware'=>'auth', 'prefix'=>'admin'], function() {
 
   Route::controller('user', 'Admin\UserController');
 
-  Route::controller('portfolio', 'Admin\PortfolioController');
-
-  Route::controller('page', 'Admin\PageController');
+  Route::controller('about', 'Admin\AboutController');
 
 });

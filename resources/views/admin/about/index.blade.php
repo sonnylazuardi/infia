@@ -25,8 +25,8 @@
   <div class="row control-group">
     <div class="form-group col-xs-12">
       <label>Home Picture</label>
-      <img src="{{asset($news->home_picture)}}" alt="" id="current_image_1" /> 
-      <input type="text" id="feature_image_1" name="home_picture" class="form-control" value="{{$news->image}}"/>
+      <img src="{{asset(@$home_picture->value)}}" alt="" id="current_image_1" /> 
+      <input type="text" id="feature_image_1" name="home_picture" class="form-control" value="{{@$home_picture->value}}"/>
       <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih Gambar</a>
     </div>
   </div>
@@ -34,21 +34,10 @@
   <div class="row control-group">
     <div class="form-group col-xs-12">
       <label>History</label>
-      <textarea rows="5" class="form-control editor" placeholder="Content of your news" id="content" name="content" required>{{$news->content}}</textarea>
+      <textarea rows="5" class="form-control editor" placeholder="Content of your news" id="content" name="history" required>{{@$history->text}}</textarea>
       <p class="help-block text-danger"></p>
     </div>
   </div>
-
-
-  <div class="row control-group">
-    <div class="form-group col-xs-12">
-      <label>Gambar</label>
-      <img src="{{asset($news->image)}}" alt="" id="current_image" /> 
-      <input type="text" id="feature_image" name="image" class="form-control" value="{{$news->image}}"/>
-      <a href="" class="popup_selector" data-inputid="feature_image">Pilih Gambar</a>
-    </div>
-  </div>
-
 
   <br>
   <div id="success"></div>
@@ -99,6 +88,7 @@
     });
     // function to update the file selected by elfinder
     function processSelectedFile(filePath, requestingField) {
+      filePath = filePath.replace(/\\/g, '/');
       $('#' + requestingField).val(filePath);
       $('#' + imageID).attr('src', '{{url('/')}}/' + filePath);
     }
