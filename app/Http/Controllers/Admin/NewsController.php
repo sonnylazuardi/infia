@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\News;
 use Illuminate\Http\Request;
+use App\NewsImages;
 
 class NewsController extends Controller {
 
@@ -38,9 +39,18 @@ class NewsController extends Controller {
 	public function postCreate(Request $request)
 	{
 		$news = new News($request->all());
-    $news->save();
-    return redirect('/admin/news/index')
-       ->with('alert', 'News created');
+		if ($images = $request->input('images')) {
+	    	$old_images = NewsImages::where('news_id', $id)->delete();
+	    	foreach ($images as $item) {
+	    		NewsImages::create([
+	    			'news_id' => $id,
+	    			'image'=>$item,
+	    		]);
+	    	}
+	    }
+	    $news->save();
+	    return redirect('/admin/news/index')
+	       ->with('alert', 'News created');
 	}
 
 	/**
@@ -75,10 +85,21 @@ class NewsController extends Controller {
 	public function postUpdate(Request $request, $id)
 	{
 		$news = News::findOrFail($id);
-    $news->fill($request->all());
-    $news->save();
-    return redirect('admin/news/index')
-        ->with('alert', 'Post updated');
+	    $news->fill($request->all());
+
+	    if ($images = $request->input('images')) {
+	    	$old_images = NewsImages::where('news_id', $id)->delete();
+	    	foreach ($images as $item) {
+	    		NewsImages::create([
+	    			'news_id' => $id,
+	    			'image'=>$item,
+	    		]);
+	    	}
+	    }
+
+	    $news->save();
+	    return redirect('admin/news/index')
+	        ->with('alert', 'Post updated');
 	}
 
 	

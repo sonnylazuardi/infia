@@ -39,13 +39,53 @@
 
   <div class="row control-group">
     <div class="form-group col-xs-12"  name="img-form-container" id="img-form-container">
-      <label>Gambar</label>
-      <div class="row" name="img-form-1" id="img-form-1">
+      <label>Gambar Utama</label>
+      <div class="row">
         <div class="col-xs-12">
           <img src="{{asset($news->image)}}" alt="" id="current_image" /> 
           <input type="text" id="feature_image" name="image" class="form-control" value="{{$news->image}}"/>
           <a href="" class="popup_selector" data-inputid="feature_image">Pilih</a>
-          <a href="" onclick="deleteImgForm(1)">Hapus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row control-group">
+    <div class="form-group col-xs-12"  name="img-form-container" id="img-form-container">
+      <label>Gambar Tambahan</label>
+      <div class="row">
+        <div class="col-xs-12">
+          <img src="{{asset(@$news->images[0]->image)}}" alt="" id="current_image_1" /> 
+          <input type="text" id="feature_image_1" name="images[]" class="form-control" value="{{@$news->images[0]->image}}"/>
+          <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img src="{{asset(@$news->images[1]->image)}}" alt="" id="current_image_2" /> 
+          <input type="text" id="feature_image_2" name="images[]" class="form-control" value="{{@$news->images[1]->image}}"/>
+          <a href="" class="popup_selector" data-inputid="feature_image_2" data-imageid="current_image_2">Pilih</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img src="{{asset(@$news->images[2]->image)}}" alt="" id="current_image_3" /> 
+          <input type="text" id="feature_image_3" name="images[]" class="form-control" value="{{@$news->images[2]->image}}"/>
+          <a href="" class="popup_selector" data-inputid="feature_image_3" data-imageid="current_image_3">Pilih</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img src="{{asset(@$news->images[3]->image)}}" alt="" id="current_image_4" /> 
+          <input type="text" id="feature_image_4" name="images[]" class="form-control" value="{{@$news->images[3]->image}}"/>
+          <a href="" class="popup_selector" data-inputid="feature_image_4" data-imageid="current_image_4">Pilih</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img src="{{asset(@$news->images[4]->image)}}" alt="" id="current_image_5" /> 
+          <input type="text" id="feature_image_5" name="images[]" class="form-control" value="{{@$news->images[4]->image}}"/>
+          <a href="" class="popup_selector" data-inputid="feature_image_5" data-imageid="current_image_5">Pilih</a>
         </div>
       </div>
     </div>
@@ -143,10 +183,13 @@
       });
       
     } );
-  
+    
+    var imageID = '';
+
     $(document).on('click','.popup_selector',function (event) {
       event.preventDefault();
       var updateID = $(this).attr('data-inputid'); // Btn id clicked
+      imageID = $(this).attr('data-imageid'); 
       var elfinderUrl = '{{url('/')}}/elfinder/popup/';
 
       // trigger the reveal modal with elfinder inside
@@ -163,7 +206,7 @@
     // function to update the file selected by elfinder
     function processSelectedFile(filePath, requestingField) {
       $('#' + requestingField).val(filePath);
-      $('#current_image').attr('src', '{{url('/')}}/' + filePath);
+      $('#' + imageID).attr('src', '{{url('/')}}/' + filePath);
     }
 
   </script>

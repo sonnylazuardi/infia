@@ -31,4 +31,8 @@ class News extends Model {
         return \Carbon\Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans();
     }
 
+    public function images()
+    {
+        return $this->hasMany('App\NewsImages', 'news_id');
+    }
 }
