@@ -30,7 +30,7 @@
 	      			<p> {{$item->timestamp}}</p>
 	      		</div>
 	      		<div class="front-news-description">
-	      			<p>{!!str_limit($item->content, $limit = 250, $end = '')!!} <a href="news/single/{{$item->id}}">..See More..</a></p>
+	      			<p>{!!str_limit($item->content, $limit = 250, $end = '')!!} <a href="{{url('news/single/'.$item->id)}}">..See More..</a></p>
 	      		</div>
 	      	</div>
 	      	@endforeach

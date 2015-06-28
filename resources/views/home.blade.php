@@ -20,11 +20,15 @@
         <div class="news-item row">
           @foreach ($news as $item)
             <div class="col-md-4">
-              <div class="item-image">
-                <img src="{{asset($item->image)}}" alt="">
-              </div>
-              <div class="item-title">
-                {{$item->title}}
+              <div class="item-wrap">
+                <div class="item-image">
+                  <img src="{{asset($item->image)}}" alt="">
+                </div>
+                <div class="item-title">
+                  <a href="{{url('/news/single/'.$item->id)}}">
+                    {{$item->title}}
+                  </a>
+                </div>
               </div>
             </div>
           @endforeach
@@ -42,6 +46,8 @@
       $(".full-image").imgLiquid({
         fill: false
       });
+
+      $(".item-image").imgLiquid();
     });
   </script>
 @endsection

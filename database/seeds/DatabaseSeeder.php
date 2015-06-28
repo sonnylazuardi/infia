@@ -91,7 +91,7 @@ class SettingTableSeeder extends Seeder {
 		DB::table('settings')->delete();
 
 		$settings = [
-			['key'=>'home_picture', 'value'=>'home.jpg', 'text' => ''],
+			['key'=>'home_picture', 'value'=>'files/home.jpg', 'text' => ''],
 			['key'=>'history', 'value'=>'', 'text'=>'Lorem ipsum dolor sit amet'],
 		];
 
