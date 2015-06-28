@@ -1,3 +1,7 @@
 .image-bulk {
   max-height: 100px;
 }
+
+.row-pad {
+	padding-bottom:10px;
+}
