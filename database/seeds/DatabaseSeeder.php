@@ -53,8 +53,8 @@ class NewsTableSeeder extends Seeder {
 		DB::table('news')->delete();
 
 		$news = [
-			['title'=>'Berita Satu', 'slug'=>'berita-satu', 'image'=>'satu.jpg', 'content'=>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates delectus ipsa nisi deserunt quisquam ex nostrum, aperiam cumque assumenda! Iusto omnis temporibus laborum voluptatem eius earum voluptatibus officia ex sequi!' ],
-			['title'=>'Berita Dua', 'slug'=>'berita-dua', 'image'=>'dua.jpg', 'content'=>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates delectus ipsa nisi deserunt quisquam ex nostrum, aperiam cumque assumenda! Iusto omnis temporibus laborum voluptatem eius earum voluptatibus officia ex sequi!' ]
+			['title'=>'Berita Satu', 'slug'=>'berita-satu', 'image'=>'satu.jpg', 'content'=>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates delectus ipsa nisi deserunt quisquam ex nostrum, aperiam cumque assumenda! Iusto omnis temporibus laborum voluptatem eius earum voluptatibus officia ex sequi!','pinned'=>true ,'latitude'=>0,'longitude'=>0],
+			['title'=>'Berita Dua', 'slug'=>'berita-dua', 'image'=>'dua.jpg', 'content'=>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates delectus ipsa nisi deserunt quisquam ex nostrum, aperiam cumque assumenda! Iusto omnis temporibus laborum voluptatem eius earum voluptatibus officia ex sequi!','pinned'=>false,'latitude'=>0,'longitude'=>0]
 		];
 
 		foreach ($news as $news_item) {
@@ -91,8 +91,8 @@ class SettingTableSeeder extends Seeder {
 		DB::table('settings')->delete();
 
 		$settings = [
-			['key'=>'home_picture', 'value'=>'home.jpg'],
-			['key'=>'history', 'text'=>'Lorem ipsum dolor sit amet'],
+			['key'=>'home_picture', 'value'=>'home.jpg', 'text' => ''],
+			['key'=>'history', 'value'=>'', 'text'=>'Lorem ipsum dolor sit amet'],
 		];
 
 		foreach ($settings as $setting) {

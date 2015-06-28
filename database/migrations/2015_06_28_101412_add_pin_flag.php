@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewsImagesTable extends Migration {
+class AddPinFlag extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,9 @@ class CreateNewsImagesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('news_images', function(Blueprint $table)
+		Schema::table('news', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->timestamps();
+			$table->boolean('pinned');
 		});
 	}
 
@@ -26,7 +25,10 @@ class CreateNewsImagesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('news_images');
+		Schema::table('news', function(Blueprint $table)
+		{
+			$table->dropColumn('pinned');
+		});
 	}
 
 }
