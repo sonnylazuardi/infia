@@ -7,11 +7,11 @@ class Setting extends Model {
 
 	public $timestamps = false;
 
-  protected $fillable = [
-    'key',
-    'value',
-    'text',
-  ];
+	protected $fillable = [
+		'key',
+		'value',
+		'text',
+	];
 
 
 }

@@ -7,24 +7,24 @@ use Cviebrock\EloquentSluggable\SluggableTrait;
 
 class News extends Model {
 
-  use SluggableTrait;
+    use SluggableTrait;
 
-  protected $fillable = [
-    'title',
-    'content',
-    'slug',
-    'image',
-  ];
+    protected $fillable = [
+        'title',
+        'content',
+        'slug',
+        'image',
+    ];
 
-  protected $sluggable = [
-    'build_from' => 'title',
-    'save_to'    => 'slug',
-  ];
-	//
+    protected $sluggable = [
+        'build_from' => 'title',
+        'save_to'    => 'slug',
+    ];
+//
 
-  public function getTimestampAttribute()
-  {
-    return \Carbon\Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans();
-  }
+    public function getTimestampAttribute()
+    {
+        return \Carbon\Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans();
+    }
 
 }

@@ -17,7 +17,30 @@ class AboutController extends Controller {
 	{
 		$settings = Setting::all();
 
-		return view('admin.about.index', compact('settings'));
+		$home_picture = array_first($settings, function($key, $value)
+		{
+		    return $value->key == 'home_picture';
+		});
+		$history = array_first($settings, function($key, $value)
+		{
+		    return $value->key == 'history';
+		});
+
+		return view('admin.about.index', compact('home_picture', 'history'));
 	}
 
+	public function postIndex(Request $request)
+	{
+		$home_picture = Setting::where('key', 'home_picture')->first();
+		$history = Setting::where('key', 'history')->first();
+
+		$home_picture->value = $request->input('home_picture');
+		$history->text = $request->input('history');
+
+		$home_picture->save();
+		$history->save();
+
+		return redirect('admin/about/index')
+			->with('alert', 'successfully updated');
+	}
 }

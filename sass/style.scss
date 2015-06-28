@@ -118,3 +118,43 @@ form#contact {
   margin: 20px 0;
   font-size: .9em;
 }
+
+.home-history {
+  
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 150px 20%;
+  
+  .history-title {
+    letter-spacing: 10px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .history-box {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 40px 8%;
+    padding-top: 20px;
+    text-align: center;
+
+  }
+
+}
+
+.home-news {
+  
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 80px 10%;
+
+  .news-title {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    display: inline-block;
+    width: 200px;
+    border-bottom: 1px solid #000;
+  }
+
+}
