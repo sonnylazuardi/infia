@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@getIndex');
 
 Route::controller('home', 'HomeController');
 Route::controller('news', 'NewsController');
+Route::controller('kanal', 'KanalController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
