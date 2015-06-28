@@ -118,3 +118,32 @@ form#contact {
   margin: 20px 0;
   font-size: .9em;
 }
+
+img.img-news-header{
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  display:block;
+  margin:0 auto;
+}
+
+.img-news-description{
+  text-align:justify;
+  font-family:Arial;
+  font-weight:normal;
+}
+
+.img-news-title{
+  text-align:center;
+  border-top:1px solid #000;
+  margin-top:15px;
+  h2 {
+    margin-top:5px;
+  }
+}
+
+.img-news-date{
+  text-align:center;
+  border-bottom:1px solid #000;
+  margin-bottom:15px;
+}

@@ -12,6 +12,8 @@ class News extends Model {
   protected $fillable = [
     'title',
     'content',
+    'longitude',
+    'latitude',
     'slug',
     'image',
   ];
