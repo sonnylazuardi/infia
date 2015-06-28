@@ -50,6 +50,7 @@ class NewsTableSeeder extends Seeder {
 
 	public function run() {
 
+		DB::table('news_images')->delete();
 		DB::table('news')->delete();
 
 		$news = [
@@ -93,6 +94,7 @@ class SettingTableSeeder extends Seeder {
 		$settings = [
 			['key'=>'home_picture', 'value'=>'files/home.jpg', 'text' => ''],
 			['key'=>'history', 'value'=>'', 'text'=>'Lorem ipsum dolor sit amet'],
+			['key'=>'home_maskot', 'value'=>'files/maskot.jpg', 'text'=>''],
 		];
 
 		foreach ($settings as $setting) {

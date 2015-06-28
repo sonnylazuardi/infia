@@ -33,6 +33,16 @@
 
   <div class="row control-group">
     <div class="form-group col-xs-12">
+      <label>Home Maskot</label>
+      <img src="{{asset(@$home_maskot->value)}}" alt="" id="current_image_1" /> 
+      <input type="text" id="feature_image_1" name="home_maskot" class="form-control" value="{{@$home_maskot->value}}"/>
+      <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih Gambar</a>
+    </div>
+  </div>
+
+
+  <div class="row control-group">
+    <div class="form-group col-xs-12">
       <label>History</label>
       <textarea rows="5" class="form-control editor" placeholder="Content of your news" id="content" name="history" required>{{@$history->text}}</textarea>
       <p class="help-block text-danger"></p>
