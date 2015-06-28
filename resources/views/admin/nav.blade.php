@@ -37,22 +37,27 @@
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
-                    <a href="{{url('/admin/news')}}" class="active"><i class="fa fa-newspaper-o fa-fw"></i> News</a>
+                    {{-- <a class="active" href="#">Hello</a> --}}
+                    {!!Form::link_menu('admin/news', '<i class="fa fa-newspaper-o fa-fw"></i> News')!!}
+                </li>
+                
+                <li>
+                    {!!Form::link_menu('admin/portfolio', '<i class="fa fa-mobile fa-fw"></i> Portfolio')!!}
                 </li>
                 <li>
-                    <a href="{{url('/admin/portfolio')}}" class="active"><i class="fa fa-mobile fa-fw"></i> Portfolio</a>
+                    {!!Form::link_menu('admin/project', '<i class="fa fa-mobile fa-fw"></i> Portfolio')!!}
                 </li>
                 <li>
-                    <a href="{{url('/admin/project')}}" class="active"><i class="fa fa-suitcase fa-fw"></i> Project</a>
+                    {!!Form::link_menu('admin/project', '<i class="fa fa-suitcase fa-fw"></i> Project')!!}
                 </li>
                 <li>
-                    <a href="{{url('/admin/page')}}" class="active"><i class="fa fa-archive fa-fw"></i> Page</a>
+                    {!!Form::link_menu('admin/page', '<i class="fa fa-archive fa-fw"></i> Page')!!}
                 </li>
                 <li>
-                    <a href="{{url('/admin/contact')}}"><i class="fa fa-envelope fa-fw"></i> Contact</a>
+                    {!!Form::link_menu('admin/contact', '<i class="fa fa-envelope fa-fw"></i> Contact')!!}
                 </li>
                 <li>
-                    <a href="{{url('/admin/user')}}"><i class="fa fa-user fa-fw"></i> Users</a>
+                    {!!Form::link_menu('admin/user', '<i class="fa fa-user fa-fw"></i> Users')!!}
                 </li>
             </ul>
         </div>
