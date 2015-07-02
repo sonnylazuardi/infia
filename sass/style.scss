@@ -330,3 +330,12 @@ img.img-news-header2{
   height:100vh;
 
 }
+
+.img-slider {
+  text-align: center;
+  margin: 20px 0;
+  .img-item {
+    height: 100px;
+    cursor: pointer;
+  }
+}

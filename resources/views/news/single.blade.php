@@ -7,6 +7,21 @@
     	<div class="container">
     		<div style="background:url('{{asset('/img/spongebob.jpg')}}') no-repeat center center;" class="feature-image">
     		</div>
+        <div class="img-slider">
+          <div class="row">
+            @foreach ($item->images as $image)
+              @if ($image->image)
+                <div class="col-xs-3">
+                  <a class="image_popup" href="{{asset($image->image)}}" title="">
+                    <div class="img-item">
+                      <img src="{{asset($image->image)}}" alt="">
+                    </div>
+                  </a>
+                </div>
+              @endif
+            @endforeach
+          </div>
+        </div>
     		<div class="front-news-title">
     			<h2> {{$item->title}}</h2>
     		</div>
@@ -23,8 +38,9 @@
 @endsection
 
 @section('script')
-
+  <link rel="stylesheet" href="{{asset('css/colorbox.css')}}">
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB52sSHDcDbRehaBgmFiRx2E_j8L8qMsFY"></script>
+  <script src="{{asset('js/jquery.colorbox-min.js')}}"></script>
 
   <script>
 
@@ -48,8 +64,13 @@
       draggable: false // allow user to drag the marker
     });
 
+    $('.image_popup').colorbox();
+
     $("#longitude").val(marker.getPosition().lng());
     $("#latitude").val(marker.getPosition().lat());
+    $(".img-item").imgLiquid({
+        fill: true
+      });
   </script>
   
 @endsection
