@@ -25,12 +25,5 @@ class NewsController extends Controller {
 		return view('news.single', compact('item'));
 	}
 
-	public function getLayout2()
-	{
-		$news = News::orderBy('created_at', 'desc')->get();
-		$pinnedNews = News::where('pinned',true)->first();
-		return view('news.index2', compact('news','pinnedNews'));
-	}
-
 
 }
