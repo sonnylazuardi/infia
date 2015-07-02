@@ -10,7 +10,7 @@
         <div class="box">
           <h1>Contact</h1>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae maiores eius voluptas deserunt modi dolores, doloribus, temporibus repellat quo sint, placeat dolor, minima ratione odio quibusdam labore eligendi unde!</p>
+          <p>Silakan tinggalkan pesan untuk kami. Kami akan membaca dan membalas pesan anda :)</p>
 
           <div class="info">
             <div>
@@ -62,7 +62,8 @@
           <div id="map"></div>
         </div>
         <div class="address">
-          Jl. H. Syahrin, Kby. Baru <br> Kota Jkt Sel., Daerah Khusus <br> Ibukota Jkt 12140
+          PT INFIA MEDIA PRATAMA 
+          <br>Level 5, Suite 501-504 Tower B, Beltway Office Park, Jl. Letjen TB Simatupang no 41 Jakarta 12550
         </div>
       </div>
     </div>
@@ -77,12 +78,12 @@
 $(document).ready(function() {
   var map = new GMaps({
     el: '#map',
-    lat: -6.2632617,
-    lng: 106.7927485
+    lat: -6.29143,
+    lng: 106.817562
   });
   map.addMarker({
-    lat: -6.2632617,
-    lng: 106.7927485,
+    lat: -6.29143,
+    lng: 106.817562,
     title: 'Infia'
   })
 });
