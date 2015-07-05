@@ -423,3 +423,29 @@ img.img-news-header2{
   }
 }
 
+.kanal-nav {
+  padding-top:100px;
+    width: 200px;
+  text-align: center !important;
+  float: left;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  background-color:#FFECAA;
+  /* margin-left: -100px; */
+  left: 50px;
+  transition: all .5s ease;
+}
+
+.kanal-content {
+  margin-left:200px;
+  background-color:#53C6CF;
+}
+
+@media(min-width: 768px){
+  .kanal-nav {
+    left: 250px;
+  }
+}

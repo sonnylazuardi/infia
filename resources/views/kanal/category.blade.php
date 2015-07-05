@@ -2,11 +2,9 @@
 
 @section('content')
     {{-- <div class="container-fluid kanal-container"> --}}
-        <div class="row kanal">
-            <div class="col-lg-2 col-md-3 col-sm-4 kanal-left">
-                @include('kanal.nav')
-            </div>
-            <div class="col-lg-10 col-md-9 col-sm-8 kanal-content">
+        <div class="kanal">
+            @include('kanal.nav')
+            <div class="kanal-content">
             	@foreach ($items as $i => $item)
             		<div class="kanal-single">
 		                <div style="background:url('{{asset($item->image)}}') no-repeat ; background-size:cover; background-position: bottom right" class="kanal-single-image">
