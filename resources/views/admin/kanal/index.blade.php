@@ -20,6 +20,7 @@
               <thead>
                 <tr>
                   <th>Judul</th>
+                  <th>Category</th> 
                   <th>Deskripsi</th>                  
                   <th>Gambar</th>
                   <th>Waktu</th>
@@ -31,6 +32,7 @@
                 @foreach ($items as $item)
                 <tr class="odd gradeX">
                   <td>{{$item->title}}</td>
+                  <td>{{$item->category}}</td>
                   <td>{{str_limit($item->description, $limit = 100, $end = '...')}}</td>
                   <td><img src="{{asset($item->image)}}" alt="" class="image-bulk"></td>
                   <td>{{$item->timestamp}}</td>

@@ -18,7 +18,7 @@ class CreateKanalsTable extends Migration {
 			$table->string('title');
 	        $table->string('category');
 	        $table->string('description');
-	        $table->string('slug');
+	        $table->string('instagramAccount');
 	        $table->string('instagramId');
 	        $table->string('color');
 	        $table->string('image');

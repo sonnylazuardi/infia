@@ -32,14 +32,14 @@
   <div class="row control-group">
     <div class="form-group col-xs-12">
       <label>Kategori</label>
-      <input type="text" class="form-control" placeholder="Title" name="title" id="title" required value="{{$item->category}}">
+      <input type="text" class="form-control" placeholder="Kategori" name="category" id="category" required value="{{$item->category}}">
     </div>
   </div>
 
   <div class="row control-group">
     <div class="form-group col-xs-12">
       <label>Deskripsi</label>
-      <textarea rows="5" class="form-control editor" placeholder="Deskripsi Item Kanal" id="content" name="content" required>{{$item->description}}</textarea>
+      <textarea rows="5" class="form-control editor" placeholder="Deskripsi Item Kanal" id="description" name="description" required>{{$item->description}}</textarea>
       <p class="help-block text-danger"></p>
     </div>
   </div>
@@ -59,8 +59,22 @@
 
   <div class="row control-group">
     <div class="form-group col-xs-12">
+      <label>Akun Instagram</label>
+      <input type="text" class="form-control" placeholder="Akun Instagram" name="instagramAccount" id="instagramAccount" required value="{{$item->instagramAccount}}">
+    </div>
+  </div>
+
+  <div class="row control-group">
+    <div class="form-group col-xs-12">
+      <label>ID Instagram</label>
+      <input type="text" class="form-control" placeholder="ID Instagram" name="instagramID" id="instagramID" required value="{{$item->instagramID}}">
+    </div>
+  </div>
+
+  <div class="row control-group">
+    <div class="form-group col-xs-12">
       <label>Warna</label>
-      <input type="text" class="form-control" placeholder="Title" name="title" id="title" required value="{{$item->color}}">
+      <input type="text" class="form-control" placeholder="Warna" name="color" id="color" required value="{{$item->color}}">
     </div>
   </div>
 

@@ -9,7 +9,7 @@ class Kanal extends Model {
         'title',
         'category',
         'description',
-        'slug',
+        'instagramAccount',
         'instagramId',
         'color',
         'image',

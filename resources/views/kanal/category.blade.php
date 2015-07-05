@@ -9,15 +9,16 @@
             <div class="col-lg-10 col-md-9 col-sm-8 kanal-content">
             	@foreach ($items as $i => $item)
             		<div class="kanal-single">
-		                <div style="background:url('{{asset($item->image)}}') no-repeat center; background-size:cover" class="kanal-single-image">
+		                <div style="background:url('{{asset($item->image)}}') no-repeat ; background-size:cover; background-position: bottom right" class="kanal-single-image">
 		                </div>
 		                <div style="background-color:{{$item->color}}" class="kanal-single-content">
 		                	<div class="container container-small">
-		                		<h2 id="{{$item->slug}}-target" class="kanal-single-title">{{$item->title}}</h2>
+		                		<h2 id="instagram-{{$item->id}}-target" class="kanal-single-title">{{$item->title}}</h2>
 		                	</div>
-		                	<div style="display:none" class="container" show-target="{{$item->slug}}-target" status="hidden">
+		                	<div style="display:none" class="container" show-target="instagram-{{$item->id}}-target" instagram-id="{{$item->instagramId}}">
 			                	<p>{{$item->description}}</p>
-	                        	<div id="{{$item->slug}}"></div>
+	                        	<div class="kanal-instagram" id="instagram-{{$item->instagramId}}"></div>
+                                <a class="btn btn-warning btn-kanal" href="https://instagram.com/{{$item->instagramAccount}}"> @ {{$item->instagramAccount}} </a>
                         	</div>
 		                </div>
 	                </div>
@@ -36,6 +37,8 @@
     <script>
     	$(".kanal-single-title").click(function(){
     		$("[show-target='" + event.target.id + "']").slideToggle('slow');
+            var id = $("[show-target='" + event.target.id + "']").attr("instagram-id");
+            showInstagram(parseInt(id));
 		});
     </script>
 
