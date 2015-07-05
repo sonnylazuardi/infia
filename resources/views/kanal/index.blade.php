@@ -1,4 +1,4 @@
-@extends('app')
+@extends('kanal.layout')
 
 @section('content')
     {{-- <div class="container-fluid kanal-container"> --}}
