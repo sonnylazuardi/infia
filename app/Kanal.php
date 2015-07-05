@@ -11,6 +11,7 @@ class Kanal extends Model {
         'description',
         'slug',
         'instagramId',
+        'color',
         'image',
     ];
 

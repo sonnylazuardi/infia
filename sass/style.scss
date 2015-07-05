@@ -366,7 +366,6 @@ img.img-news-header2{
 
 .kanal-single-content {
   padding:0px;
-  background-color: #27aae2;
   .container {
     padding-bottom: 80px;
   }
@@ -397,6 +396,15 @@ img.img-news-header2{
     }
     a:hover {
       background-color: #ffecaa !important;
+    }
+    a:active {
+      background-color: #ffecaa !important;
+    }
+  }
+
+  .active{
+    a {
+      color: #CD6E2A !important;
     }
   }
 }

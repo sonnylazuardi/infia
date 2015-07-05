@@ -40,6 +40,9 @@
                     {!!Form::link_menu('admin/about', '<i class="fa fa-question-circle fa-fw"></i> About')!!}
                 </li>
                 <li>
+                    {!!Form::link_menu('admin/kanal', '<i class="fa fa-lemon-o fa-fw"></i> Kanal')!!}
+                </li>
+                <li>
                     {!!Form::link_menu('admin/news', '<i class="fa fa-newspaper-o fa-fw"></i> News')!!}
                 </li>
                 <li>

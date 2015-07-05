@@ -1,4 +1,4 @@
-@extends('app')
+@extends('app2')
 
 @section('content')
 <!-- Page Content -->
@@ -39,6 +39,7 @@
 
 @section('script')
   <link rel="stylesheet" href="{{asset('css/colorbox.css')}}">
+    <script src="{{asset('admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB52sSHDcDbRehaBgmFiRx2E_j8L8qMsFY"></script>
   <script src="{{asset('js/jquery.colorbox-min.js')}}"></script>
 
@@ -46,9 +47,6 @@
 
     // Map setup
     var latlng = new google.maps.LatLng({{$item->latitude}}, {{$item->longitude}});
-    if ($("#latitude").val() != "" && $("#longitude").val() != ""){
-      latlng = new google.maps.LatLng($("#latitude").val(), $("#longitude").val());
-    }
 
     var mapOptions = {
       zoom: 11, // set the map zoom level
@@ -66,8 +64,6 @@
 
     $('.image_popup').colorbox();
 
-    $("#longitude").val(marker.getPosition().lng());
-    $("#latitude").val(marker.getPosition().lat());
     $(".img-item").imgLiquid({
         fill: true
       });

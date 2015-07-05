@@ -28,7 +28,7 @@ class CreateSettingsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('setting', function(Blueprint $table)
+		Schema::drop('settings', function(Blueprint $table)
 		{
 			//
 		});

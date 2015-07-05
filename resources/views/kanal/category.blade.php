@@ -11,7 +11,7 @@
             		<div class="kanal-single">
 		                <div style="background:url('{{asset($item->image)}}') no-repeat center; background-size:cover" class="kanal-single-image">
 		                </div>
-		                <div class="kanal-single-content">
+		                <div style="background-color:{{$item->color}}" class="kanal-single-content">
 		                	<div class="container container-small">
 		                		<h2 id="{{$item->slug}}-target" class="kanal-single-title">{{$item->title}}</h2>
 		                	</div>
@@ -35,16 +35,7 @@
 
     <script>
     	$(".kanal-single-title").click(function(){
-    		
-    		var status =  $("[show-target='" + event.target.id + "']").attr("status");
-    		if (status == "hidden"){
-    			$("[show-target='" + event.target.id + "']").show();
-    			$("[show-target='" + event.target.id + "']").attr("status","visible");
-    		}
-    		else {
-    			$("[show-target='" + event.target.id + "']").hide();
-    			$("[show-target='" + event.target.id + "']").attr("status","hidden");
-    		}
+    		$("[show-target='" + event.target.id + "']").slideToggle('slow');
 		});
     </script>
 

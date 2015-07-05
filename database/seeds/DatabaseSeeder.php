@@ -113,28 +113,28 @@ class KanalSeeder extends Seeder
 		DB::table('kanals')->delete();
 
 		$kanals = [
-			['title'=> 'Infia Fact', 'category'=> 'Information', 'description' => 'Lorem Ipsum' ,'slug'=> 'infia-fact', 'instagramId'=> '1302384083', 'image'=> 'files/kanal/fact.png'],
-			['title'=> 'Infia Health', 'category'=> 'Information', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-health', 'instagramId'=> '1370260777', 'image'=> 'files/kanal/health.png'],
-			['title'=> 'Infia Showbiz', 'category'=> 'Information', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-showbiz', 'instagramId'=> '1370275821', 'image'=> 'files/kanal/showbiz.png'],
-			['title'=> 'Infia Entrepreneur', 'category'=> 'Information', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-entrepeneur', 'instagramId'=> '1373308993', 'image'=> 'files/kanal/entrepreneur.png'],
-			['title'=> 'Infia Tech', 'category'=> 'Information', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-tech', 'instagramId'=> '1373128590', 'image'=> 'files/kanal/tech.png'],
-			['title'=> 'Infia Automotive', 'category'=> 'Information', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-automotive', 'instagramId'=> '1606806837', 'image'=> 'files/kanal/automotive.png'],
+			['title'=> 'Infia Fact', 'category'=> 'Information', 'description' => 'Lorem Ipsum' ,'slug'=> 'infia-fact', 'color' => '#27aae2', 'instagramId'=> '1302384083', 'image'=> 'files/kanal/fact.png'],
+			['title'=> 'Infia Health', 'category'=> 'Information', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-health', 'color' => '#27aae2', 'instagramId'=> '1370260777', 'image'=> 'files/kanal/health.png'],
+			['title'=> 'Infia Showbiz', 'category'=> 'Information', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-showbiz', 'color' => '#27aae2', 'instagramId'=> '1370275821', 'image'=> 'files/kanal/showbiz.png'],
+			['title'=> 'Infia Entrepreneur', 'category'=> 'Information', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-entrepeneur', 'color' => '#27aae2', 'instagramId'=> '1373308993', 'image'=> 'files/kanal/entrepreneur.png'],
+			['title'=> 'Infia Tech', 'category'=> 'Information', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-tech', 'color' => '#27aae2', 'instagramId'=> '1373128590', 'image'=> 'files/kanal/tech.png'],
+			['title'=> 'Infia Automotive', 'category'=> 'Information', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-automotive', 'color' => '#27aae2', 'instagramId'=> '1606806837', 'image'=> 'files/kanal/fact.png'],
 			
-			['title'=> 'Dagelan', 'category'=> 'Entertainment', 'description' => 'Lorem Ipsum' , 'slug'=> 'dagelan', 'instagramId'=> '367005646', 'image'=> 'files/kanal/fact.png'],
-			['title'=> 'Dagelan TV', 'category'=> 'Entertainment', 'description' => 'Lorem Ipsum' , 'slug'=> 'dagelantv', 'instagramId'=> '1441085265', 'image'=> 'files/kanal/fact.png'],
-			['title'=> 'Ramalan Dagelan', 'category'=> 'Entertainment', 'description' => 'Lorem Ipsum' , 'slug'=> 'ramalandagelan', 'instagramId'=> '1673403429', 'image'=> 'files/kanal/fact.png'],
-			['title'=> 'Komikin Ajah', 'category'=> 'Entertainment', 'description' => 'Lorem Ipsum' , 'slug'=> 'komikin-ajah', 'instagramId'=> '1532214774', 'image'=> 'files/kanal/fact.png'],
-			['title'=> 'Komik Dagelan', 'category'=> 'Entertainment', 'description' => 'Lorem Ipsum' , 'slug'=> 'komik-dagelan', 'instagramId'=> '1835929849', 'image'=> 'files/kanal/fact.png'],
-			['title'=> 'Sahabat Dagelan', 'category'=> 'Entertainment', 'description' => 'Lorem Ipsum' , 'slug'=> 'sahabatdagelan', 'instagramId'=> '1551209130', 'image'=> 'files/kanal/fact.png'],
+			['title'=> 'Dagelan', 'category'=> 'Entertainment', 'description' => 'Lorem Ipsum' , 'slug'=> 'dagelan', 'color' => '#27aae2','instagramId'=> '367005646', 'image'=> 'files/kanal/dagelan.png'],
+			['title'=> 'Dagelan TV', 'category'=> 'Entertainment', 'description' => 'Lorem Ipsum' , 'slug'=> 'dagelantv', 'color' => '#27aae2','instagramId'=> '1441085265', 'image'=> 'files/kanal/dagelan.png'],
+			['title'=> 'Ramalan Dagelan', 'category'=> 'Entertainment', 'description' => 'Lorem Ipsum' , 'slug'=> 'ramalandagelan', 'color' => '#27aae2','instagramId'=> '1673403429', 'image'=> 'files/kanal/ramalan.png'],
+			['title'=> 'Komikin Ajah', 'category'=> 'Entertainment', 'description' => 'Lorem Ipsum' , 'slug'=> 'komikin-ajah', 'color' => '#27aae2','instagramId'=> '1532214774', 'image'=> 'files/kanal/komik.png'],
+			['title'=> 'Komik Dagelan', 'category'=> 'Entertainment', 'description' => 'Lorem Ipsum' , 'slug'=> 'komik-dagelan', 'color' => '#27aae2','instagramId'=> '1835929849', 'image'=> 'files/kanal/komik.png'],
+			['title'=> 'Sahabat Dagelan', 'category'=> 'Entertainment', 'description' => 'Lorem Ipsum' , 'slug'=> 'sahabatdagelan', 'color' => '#27aae2', 'instagramId'=> '1551209130', 'image'=> 'files/kanal/fact.png'],
 			
-			['title'=> 'Do Dolan', 'category'=> 'E-Commerce', 'description' => 'Lorem Ipsum' , 'slug'=> 'do-dolan', 'instagramId'=> '1490731495', 'image'=> 'files/kanal/fact.png'],
-			['title'=> 'Infia Automarket', 'category'=> 'E-Commerce', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-automarket', 'instagramId'=> '1766823179', 'image'=> 'files/kanal/fact.png'],
-			['title'=> 'Infia Market', 'category'=> 'E-Commerce', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-market', 'instagramId'=> '1771308599', 'image'=> 'files/kanal/fact.png'],
+			['title'=> 'Do Dolan', 'category'=> 'E-Commerce', 'description' => 'Lorem Ipsum' , 'slug'=> 'do-dolan', 'color' => '#27aae2', 'instagramId'=> '1490731495', 'image'=> 'files/kanal/fact.png'],
+			['title'=> 'Infia Automarket', 'category'=> 'E-Commerce', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-automarket', 'color' => '#27aae2', 'instagramId'=> '1766823179', 'image'=> 'files/kanal/fact.png'],
+			['title'=> 'Infia Market', 'category'=> 'E-Commerce', 'description' => 'Lorem Ipsum' , 'slug'=> 'infia-market', 'color' => '#27aae2', 'instagramId'=> '1771308599', 'image'=> 'files/kanal/sahabat.png'],
 			
-			['title'=> 'Dailymanly', 'category'=> 'Partner', 'description' => 'Lorem Ipsum' ,'slug'=> 'dailymanly', 'instagramId'=> '1583428661', 'image'=> 'files/kanal/fact.png'],
-			['title'=> 'Rahasia Gadis', 'category'=> 'Partner', 'description' => 'Lorem Ipsum' ,'slug'=> 'rahasiagadis', 'instagramId'=> '1396112706', 'image'=> 'files/kanal/fact.png'],
-			['title'=> 'Yang Terdalam', 'category'=> 'Partner', 'description' => 'Lorem Ipsum' ,'slug'=> 'yang-terdalam', 'instagramId'=> '1551910706', 'image'=> 'files/kanal/fact.png'],
-			['title'=> 'Bolagila', 'category'=> 'Partner', 'description' => 'Lorem Ipsum' ,'slug'=> 'bolagila', 'instagramId'=> '1388376735', 'image'=> 'files/kanal/fact.png']
+			['title'=> 'Dailymanly', 'category'=> 'Partner', 'description' => 'Lorem Ipsum' ,'slug'=> 'dailymanly', 'color' => '#27aae2', 'instagramId'=> '1583428661', 'image'=> 'files/kanal/fact.png'],
+			['title'=> 'Rahasia Gadis', 'category'=> 'Partner', 'description' => 'Lorem Ipsum' ,'slug'=> 'rahasiagadis', 'color' => '#27aae2', 'instagramId'=> '1396112706', 'image'=> 'files/kanal/fact.png'],
+			['title'=> 'Yang Terdalam', 'category'=> 'Partner', 'description' => 'Lorem Ipsum' ,'slug'=> 'yang-terdalam', 'color' => '#27aae2', 'instagramId'=> '1551910706', 'image'=> 'files/kanal/fact.png'],
+			['title'=> 'Bolagila', 'category'=> 'Partner', 'description' => 'Lorem Ipsum' ,'slug'=> 'bolagila', 'color' => '#27aae2', 'instagramId'=> '1388376735', 'image'=> 'files/kanal/fact.png']
 		];
 
 		foreach ($kanals as $kanal) {

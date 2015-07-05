@@ -31,6 +31,8 @@ Route::group(['middleware'=>'auth', 'prefix'=>'admin'], function() {
 
   Route::controller('user', 'Admin\UserController');
 
+  Route::controller('kanal', 'Admin\KanalController');
+
   Route::controller('about', 'Admin\AboutController');
 
 });
