@@ -2,11 +2,7 @@
 
 @section('content')
 
-<div class="row">
-  <div class="col-lg-12">
-    <h1 class="page-header">Update Berita</h1>
-  </div>
-</div>
+<h3><i class="fa fa-angle-right"></i> Buat/Perbarui Item Berita </h3>
 
 @if (count($errors) > 0)
   <div class="alert alert-danger">
@@ -19,110 +15,113 @@
   </div>
 @endif
 
-<form name="postForm" id="postForm" novalidate="" method="post">
-  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+<div class="form-panel">
+  <h4 class="mb"><i class="fa fa-angle-right"></i>Item Berita</h4>
+  <form name="postForm" id="postForm" novalidate="" method="post" class="form-horizontal style-form">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+      <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Judul</label>
+          <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Title" name="title" id="title" required value="{{$news->title}}">
+          </div>
+      </div>
 
-  <div class="row control-group">
-    <div class="form-group col-xs-12">
-      <label>Judul</label>
-      <input type="text" class="form-control" placeholder="Title" name="title" id="title" required value="{{$news->title}}">
-    </div>
-  </div>
+      <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Isi Berita</label>
+          <div class="col-sm-10">
+              <textarea rows="5" class="form-control editor" placeholder="Content of your news" id="content" name="content" required>{{$news->content}}</textarea>
+              <p class="help-block text-danger"></p>
+          </div>
+      </div>
 
-  <div class="row control-group">
-    <div class="form-group col-xs-12">
-      <label>Isi Berita</label>
-      <textarea rows="5" class="form-control editor" placeholder="Content of your news" id="content" name="content" required>{{$news->content}}</textarea>
-      <p class="help-block text-danger"></p>
-    </div>
-  </div>
+      <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Gambar Utama</label>
+          <div class="col-sm-10">
+              <input type="text" id="feature_image" name="image" class="form-control" value="{{$news->image}}"/>
+              <img style="padding-top:10px" src="{{asset($news->image)}}" alt="" id="current_image" height="150px" /> 
+              <a href="" class="popup_selector" data-inputid="feature_image">Pilih</a>
+          </div>
+      </div>
 
-  <div class="row control-group">
-    <div class="form-group col-xs-12"  name="img-form-container" id="img-form-container">
-      <label>Gambar Utama</label>
-      <div class="row">
-        <div class="col-xs-12">
-          <img src="{{asset($news->image)}}" alt="" id="current_image" /> 
-          <input type="text" id="feature_image" name="image" class="form-control" value="{{$news->image}}"/>
-          <a href="" class="popup_selector" data-inputid="feature_image">Pilih</a>
+      <div class="form-group">
+        <label class="col-sm-2 col-sm-2 control-label">Gambar Tambahan</label>
+        <div class="col-sm-10" name="img-form-container" id="img-form-container">
+          <div class="row">
+            <div class="col-xs-12">
+              
+              <input type="text" id="feature_image_1" name="images[]" class="form-control" value="{{@$news->images[0]->image}}"/>
+              <img src="{{asset(@$news->images[0]->image)}}" alt="" id="current_image_1" style="padding-top:10px" height="150px" /> 
+              <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              
+              <input type="text" id="feature_image_2" name="images[]" class="form-control" value="{{@$news->images[1]->image}}"/>
+              <img src="{{asset(@$news->images[1]->image)}}" alt="" id="current_image_2" style="padding-top:10px" height="150px" /> 
+              <a href="" class="popup_selector" data-inputid="feature_image_2" data-imageid="current_image_2">Pilih</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              
+              <input type="text" id="feature_image_3" name="images[]" class="form-control" value="{{@$news->images[2]->image}}"/>
+              <img src="{{asset(@$news->images[2]->image)}}" alt="" id="current_image_3" style="padding-top:10px" height="150px" /> 
+              <a href="" class="popup_selector" data-inputid="feature_image_3" data-imageid="current_image_3">Pilih</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              
+              <input type="text" id="feature_image_4" name="images[]" class="form-control" value="{{@$news->images[3]->image}}"/>
+              <img src="{{asset(@$news->images[3]->image)}}" alt="" id="current_image_4" style="padding-top:10px" height="150px" /> 
+              <a href="" class="popup_selector" data-inputid="feature_image_4" data-imageid="current_image_4">Pilih</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <input type="text" id="feature_image_5" name="images[]" class="form-control" value="{{@$news->images[4]->image}}"/>
+              <img src="{{asset(@$news->images[4]->image)}}" alt="" id="current_image_5" style="padding-top:10px" height="150px" /> 
+              <a href="" class="popup_selector" data-inputid="feature_image_5" data-imageid="current_image_5">Pilih</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="row control-group">
-    <div class="form-group col-xs-12"  name="img-form-container" id="img-form-container">
-      <label>Gambar Tambahan</label>
-      <div class="row">
-        <div class="col-xs-12">
-          <img src="{{asset(@$news->images[0]->image)}}" alt="" id="current_image_1" /> 
-          <input type="text" id="feature_image_1" name="images[]" class="form-control" value="{{@$news->images[0]->image}}"/>
-          <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih</a>
+      <div class="form-group">
+          <div class="col-xs-12 ">
+           <button type="button" class="btn btn-default pull-right" id="add-img-btn" name="add-img-btn" onclick="addImgForm()">
+              <span class="fa fa-plus"></span> Tambah
+           </button> 
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <img src="{{asset(@$news->images[1]->image)}}" alt="" id="current_image_2" /> 
-          <input type="text" id="feature_image_2" name="images[]" class="form-control" value="{{@$news->images[1]->image}}"/>
-          <a href="" class="popup_selector" data-inputid="feature_image_2" data-imageid="current_image_2">Pilih</a>
+
+      <div clas="row control-group">
+        <div class="form-group col-xs-12">
+          <label>Lokasi</label>
+          <div class="row">
+            <div class="col-xs-6">
+              <input type="text" class="form-control" placeholder="Latitude" name="latitude" id="latitude" required value="{{$news->latitude}}">
+            </div class="col-xs-6">
+            <div class="col-xs-6">
+              <input type="text" class="form-control" placeholder="Longitude" name="longitude" id="longitude" required value="{{$news->longitude}}">
+            </div class="col-xs-6">
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <img src="{{asset(@$news->images[2]->image)}}" alt="" id="current_image_3" /> 
-          <input type="text" id="feature_image_3" name="images[]" class="form-control" value="{{@$news->images[2]->image}}"/>
-          <a href="" class="popup_selector" data-inputid="feature_image_3" data-imageid="current_image_3">Pilih</a>
+
+      <div id="map" style="width:100%; height:400px"></div>
+
+      <br>
+
+      <div id="success"></div>
+        <div class="form-group">
+          <div class="col-xs-12 ">
+            <button type="submit" class="btn btn-theme pull-right">Simpan</button> 
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <img src="{{asset(@$news->images[3]->image)}}" alt="" id="current_image_4" /> 
-          <input type="text" id="feature_image_4" name="images[]" class="form-control" value="{{@$news->images[3]->image}}"/>
-          <a href="" class="popup_selector" data-inputid="feature_image_4" data-imageid="current_image_4">Pilih</a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <img src="{{asset(@$news->images[4]->image)}}" alt="" id="current_image_5" /> 
-          <input type="text" id="feature_image_5" name="images[]" class="form-control" value="{{@$news->images[4]->image}}"/>
-          <a href="" class="popup_selector" data-inputid="feature_image_5" data-imageid="current_image_5">Pilih</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row control-group">
-    <div class="form-group col-xs-12">
-      <button type="button" class="btn btn-default" id="add-img-btn" name="add-img-btn" onclick="addImgForm()">
-        <span class="fa fa-plus"></span> Tambah
-      </button>
-    </div>
-  </div>
-
-  <div clas="row control-group">
-    <div class="form-group col-xs-12">
-      <label>Lokasi</label>
-      <div class="row">
-        <div class="col-xs-6">
-          <input type="text" class="form-control" placeholder="Latitude" name="latitude" id="latitude" required value="{{$news->latitude}}">
-        </div class="col-xs-6">
-        <div class="col-xs-6">
-          <input type="text" class="form-control" placeholder="Longitude" name="longitude" id="longitude" required value="{{$news->longitude}}">
-        </div class="col-xs-6">
-      </div>
-    </div>
-  </div>
-
-  <div id="map" style="width:100%; height:400px"></div>
-
-  <br>
-  <div id="success"></div>
-  <div class="row">
-    <div class="form-group col-xs-12">
-      <button type="submit" class="btn btn-default">Simpan</button> 
-    </div>
-  </div>
-</form>
+  </form>
+</div>
 
 @stop
 

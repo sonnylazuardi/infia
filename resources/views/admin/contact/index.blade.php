@@ -2,57 +2,46 @@
 
 @section ('content')
 
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Kontak</h1>
-    </div>
-    <!-- /.col-lg-12 -->
+<div class="row">
+  <div class="col-md-6">
+    <h3><i class="fa fa-angle-right"></i> Kontak </h3>
   </div>
-  <!-- /.row -->
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="panel panel-default">
-        <!-- /.panel-heading -->
-        <div class="panel-body">
-          <div class="dataTable_wrapper">
-            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-              <thead>
+</div>
+<div class="row"> 
+    <div class="col-md-12 mt">
+      <div class="content-panel">
+            <table class="table table-hover">
+            <h4><i class="fa fa-angle-right"></i> Item Kontak</h4>
+            <hr>
+                <thead>
                 <tr>
-                  <th>Nama</th>
-                  <th>Subjek</th>
-                  <th>Waktu</th>
-                  <th>Email</th>
-                  <th>Pesan</th>
-                  <th>Menu</th>
+                    <th>#</th>
+                    <th>Waktu</th>
+                    <th>Nama</th>
+                    <th>Subjek</th>
+                    <th>Pesan</th>
+                    <th>Email</th>
+                    <th></th>
                 </tr>
-              </thead>
-              <tbody>
-
-                @foreach ($contacts as $contact)
-                <tr class="odd gradeX">
-                  <td>{{$contact->name}}</td>
-                  <td>{{$contact->subject}}</td>
-                  <td>{{$contact->timestamp}}</td>
-                  <td>{{$contact->email}}</td>
-                  <td>{{$contact->message}}</td>
-                  <td class="center">
-                    <a href="{{url('/admin/contact/delete/'.$contact->id)}}" class="btn btn-default" onclick="return confirm('Yakin akan menghapus item ini?');">
-                      <i class="fa fa-remove"></i>
-                    </a>
-                  </td>
-                </tr>
-                @endforeach
-
-              </tbody>
+                </thead>
+                <tbody>
+                  @foreach ($contacts as $contact)
+                  <tr>
+                    <td>{{$contact->id}}</td>
+                    <td>{{$contact->timestamp}}</td>
+                    <td>{{$contact->name}}</td>
+                    <td>{{$contact->subject}}</td>
+                    <td>{{$contact->message}}</td>
+                    <td>{{$contact->email}}</td>
+                    <td>
+                      <a href="{{url('/admin/kanal/delete/'.$contact->id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
+                    </td>
+                  </tr>
+                  @endforeach
+                </tbody>
             </table>
-          </div>
         </div>
-        <!-- /.panel-body -->
-      </div>
-      <!-- /.panel -->
     </div>
-    <!-- /.col-lg-12 -->
-  </div>
-  <!-- /.row -->
+</div>
 
 @stop
