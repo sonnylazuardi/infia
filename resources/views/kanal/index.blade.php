@@ -14,17 +14,17 @@
                     <img class="kanal-img" src="{{asset('/files/kanal/kanal.png')}}" alt="" usemap="#Map"/>
                 </div>
                 <map name="Map" id="Map">
-                    <area alt="" title="" shape="poly" coords="917,595,916,683,1061,685,1062,594" href="category/information"/>
-                    <area alt="" title="" shape="poly" coords="1531,480,1421,560,1481,646,1616,661,1679,549" href="category/information"/>
-                    <area alt="" title="" shape="poly" coords="656,830,656,918,781,919,790,822" href="category/information"/>
-                    <area alt="" title="" shape="poly" coords="817,833,817,917,915,918,920,824" href="category/information"/>
-                    <area alt="" title="" shape="poly" coords="602,928,601,1017,700,1017,714,939,645,927" href="category/information"/>
-                    <area alt="" title="" shape="poly" coords="1168,617,1152,735,1245,754,1277,642" href="category/information"/>
-                    <area alt="" title="" shape="poly" coords="1068,436,1069,533,1168,526,1175,432" href="category/information"/>
-                    <area alt="" title="" shape="poly" coords="1362,612,1359,717,1455,712,1448,629,1427,614" href="category/information"/>
-                    <area alt="" title="" shape="poly" coords="1801,485,1812,585,1971,585,1948,492" href="category/information"/>
-                    <area alt="" title="" shape="poly" coords="750,958,748,1055,866,1057,880,949" href="category/information"/>
-                    <area alt="" title="" shape="poly" coords="588,671,581,792,753,799,763,664" href="category/information"/>
+                    <area alt="" title="" shape="poly" coords="917,595,916,683,1061,685,1062,594" href="category/information#infia_automarket"/>
+                    <area alt="" title="" shape="poly" coords="1531,480,1421,560,1481,646,1616,661,1679,549" href="category/entertainment#dagelan"/>
+                    <area alt="" title="" shape="poly" coords="656,830,656,918,781,919,790,822" href="category/information#infia_entrepreneur"/>
+                    <area alt="" title="" shape="poly" coords="817,833,817,917,915,918,920,824" href="category/information#infia_fact"/>
+                    <area alt="" title="" shape="poly" coords="602,928,601,1017,700,1017,714,939,645,927" href="category/information#infia_health"/>
+                    <area alt="" title="" shape="poly" coords="1168,617,1152,735,1245,754,1277,642" href="category/entertainment#komik_dagelan"/>
+                    <area alt="" title="" shape="poly" coords="1068,436,1069,533,1168,526,1175,432" href="category/e-commerce#infia_market"/>
+                    <area alt="" title="" shape="poly" coords="1362,612,1359,717,1455,712,1448,629,1427,614" href="category/entertainment#ramalandagelan"/>
+                    <area alt="" title="" shape="poly" coords="1801,485,1812,585,1971,585,1948,492" href="category/entertainment#sahabatdagelan"/>
+                    <area alt="" title="" shape="poly" coords="750,958,748,1055,866,1057,880,949" href="category/information#infia_showbiz"/>
+                    <area alt="" title="" shape="poly" coords="588,671,581,792,753,799,763,664" href="category/information#infia_tech"/>
                 </map>
             </div>
         </div>

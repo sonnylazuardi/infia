@@ -6,7 +6,7 @@
             @include('kanal.nav')
             <div class="kanal-content">
             	@foreach ($items as $i => $item)
-            		<div class="kanal-single">
+            		<div class="kanal-single" id="{{$item->instagramAccount}}">
 		                <div style="background:url('{{asset($item->image)}}') no-repeat ; background-size:cover; background-position: bottom right" class="kanal-single-image">
 		                </div>
 		                <div style="background-color:{{$item->color}}" class="kanal-single-content">
