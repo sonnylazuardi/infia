@@ -31,7 +31,7 @@
               <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
               
-                <p class="centered"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                <p class="centered"><img src="{{asset('img/logo-small.png')}}" class="img-circle" width="60"></a></p>
                 <h5 class="centered">{{{ Auth::user()->name }}}</h5>
                 <h6 class="centered">{{{ Auth::user()->email }}}</h6>
                     

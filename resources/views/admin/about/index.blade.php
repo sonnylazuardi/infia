@@ -16,11 +16,12 @@
 <div class="form-panel">
   <h4 class="mb"><i class="fa fa-angle-right"></i>About Settings</h4>
   <form name="postForm" id="postForm" novalidate="" method="post" class="form-horizontal style-form">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="form-group">
           <label class="col-sm-2 col-sm-2 control-label">Home Picture</label>
           <div class="col-sm-10">
               <input type="text" id="feature_image_1" name="home_picture" class="form-control" value="{{@$home_picture->value}}"/>
-              <img src="{{asset(@$home_picture->value)}}" alt="" id="current_image_1" height="150px"/> 
+              <img style="padding-top:10px" style="padding-top:10px" src="{{asset(@$home_picture->value)}}" alt="" id="current_image_1" height="150px"/> 
               <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih Gambar</a>
           </div>
       </div>
@@ -29,7 +30,7 @@
           <label class="col-sm-2 col-sm-2 control-label">Home Maskot</label>
           <div class="col-sm-10">
               <input type="text" id="feature_image_1" name="home_maskot" class="form-control" value="{{@$home_maskot->value}}"/>
-              <img src="{{asset(@$home_maskot->value)}}" alt="" id="current_image_1" /> 
+              <img style="padding-top:10px" src="{{asset(@$home_maskot->value)}}" alt="" id="current_image_1" height="150px"/> 
               <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih Gambar</a>
           </div>
       </div>
@@ -45,7 +46,7 @@
       <div id="success"></div>
         <div class="form-group">
           <div class="col-xs-12 ">
-            <button type="submit" class="btn btn-default pull-right">Simpan</button> 
+            <button type="submit" class="btn btn-theme pull-right">Simpan</button> 
         </div>
       </div>
   </form>
