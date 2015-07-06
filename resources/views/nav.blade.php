@@ -11,7 +11,7 @@
     {!! Form::list_menu('news/index', '<i class="demo-icon">&#xe803;</i> News') !!}
     {!! Form::list_menu('home/contact', '<i class="fa fa-phone"></i> Contact us') !!}
   </ul>
-  <div class="maskot" style="background:url('{{asset(@App\Setting::where('key', 'home_maskot')->first()->value)}}') no-repeat; background-size: contain; position: absolute; bottom: 0">
+  <div class="maskot" style="background:url('{{asset(@App\Setting::where('key', 'home_maskot')->first()->value)}}') no-repeat; background-size: contain; background-position: center; position: absolute; bottom: 0; z-index: -1">
     
   </div>
 </div>

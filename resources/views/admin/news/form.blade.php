@@ -204,6 +204,7 @@
     });
     // function to update the file selected by elfinder
     function processSelectedFile(filePath, requestingField) {
+      filePath = filePath.replace(/\\/g, '/');
       $('#' + requestingField).val(filePath);
       $('#' + imageID).attr('src', '{{url('/')}}/' + filePath);
     }

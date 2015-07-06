@@ -31,7 +31,7 @@
     		<div class="front-news-description">
     			<p>{!!$item->content!!}</p>
     		</div>
-    		<div id="map" style="width:100%; height:400px"></div>
+    		<div id="map" style="width:100%; height:150px"></div>
     	</div>
     </div>
   </div>
@@ -39,7 +39,6 @@
 
 @section('script')
   <link rel="stylesheet" href="{{asset('css/colorbox.css')}}">
-  <script src="{{asset('admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
   <script src="{{asset('js/jquery.colorbox-min.js')}}"></script>
 
   <script>

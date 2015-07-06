@@ -74,6 +74,7 @@
 
 @section('script')
 
+<script src="{{asset('js/gmaps.js')}}"></script>
 <script>
 $(document).ready(function() {
   var map = new GMaps({
