@@ -6,6 +6,13 @@
 	padding-bottom:10px;
 }
 
+.black-bg {
+	background-color:#FCD214 !important;
+}
+
+.form-login-heading {
+	background-color:#fed519 !important;
+}
 
 /*#wrapper {
   background-color: #424a5d;

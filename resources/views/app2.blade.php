@@ -22,8 +22,10 @@
       @yield('content')
 
     </div>
-
+  <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="{{asset('js/vendor.js')}}"></script>
     @yield('script')
+    
 
   </body>
 </html>

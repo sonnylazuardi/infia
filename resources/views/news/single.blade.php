@@ -39,34 +39,34 @@
 
 @section('script')
   <link rel="stylesheet" href="{{asset('css/colorbox.css')}}">
-    <script src="{{asset('admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB52sSHDcDbRehaBgmFiRx2E_j8L8qMsFY"></script>
+  <script src="{{asset('admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
   <script src="{{asset('js/jquery.colorbox-min.js')}}"></script>
 
   <script>
+    $( document ).ready( function() {
+      // Map setup
+      var latlng = new google.maps.LatLng({{$item->latitude}}, {{$item->longitude}});
 
-    // Map setup
-    var latlng = new google.maps.LatLng({{$item->latitude}}, {{$item->longitude}});
-
-    var mapOptions = {
-      zoom: 11, // set the map zoom level
-      center: latlng, // set the center region
-      disableDefaultUI: true,
-      zoomControl: true, // whether to show the zoom control beside
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    var marker = new google.maps.Marker({
-      map: map, // refer to the map you've just initialise
-      position: latlng, // set the marker position (is based on latitude & longitude)
-      draggable: false // allow user to drag the marker
-    });
-
-    $('.image_popup').colorbox();
-
-    $(".img-item").imgLiquid({
-        fill: true
+      var mapOptions = {
+        zoom: 11, // set the map zoom level
+        center: latlng, // set the center region
+        disableDefaultUI: true,
+        zoomControl: true, // whether to show the zoom control beside
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+      var marker = new google.maps.Marker({
+        map: map, // refer to the map you've just initialise
+        position: latlng, // set the marker position (is based on latitude & longitude)
+        draggable: false // allow user to drag the marker
       });
+
+      $('.image_popup').colorbox();
+
+      $(".img-item").imgLiquid({
+          fill: true
+        });
+    });
   </script>
   
 @endsection
