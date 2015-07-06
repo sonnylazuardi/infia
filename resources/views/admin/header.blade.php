@@ -18,7 +18,7 @@
     <link href="{{asset('admin/bower_components/metisMenu/dist/metisMenu.min.css')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{{asset('admin/css/sb-admin-2.css')}}" rel="stylesheet">
+    {{-- <link href="{{asset('admin/css/sb-admin-2.css')}}" rel="stylesheet"> --}}
 
     <!-- Custom Fonts -->
     <link href="{{asset('admin/bower_components/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="{{asset('css/colorbox.css')}}">
 
     <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/gum/js/gritter/css/jquery.gritter.css')}}" />
+        
+    <!-- Custom styles for this template -->
+    <link href="{{asset('admin/gum/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/gum/css/style-responsive.css')}}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

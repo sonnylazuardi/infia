@@ -2,12 +2,6 @@
 
 @section('content')
 
-<div class="row">
-  <div class="col-lg-12">
-    <h1 class="page-header">About Settings</h1>
-  </div>
-</div>
-
 @if (count($errors) > 0)
   <div class="alert alert-danger">
     <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -19,44 +13,43 @@
   </div>
 @endif
 
-<form name="postForm" id="postForm" novalidate="" method="post">
-  {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
+<div class="form-panel">
+  <h4 class="mb"><i class="fa fa-angle-right"></i>About Settings</h4>
+  <form name="postForm" id="postForm" novalidate="" method="post" class="form-horizontal style-form">
+      <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Home Picture</label>
+          <div class="col-sm-10">
+              <input type="text" id="feature_image_1" name="home_picture" class="form-control" value="{{@$home_picture->value}}"/>
+              <img src="{{asset(@$home_picture->value)}}" alt="" id="current_image_1" height="150px"/> 
+              <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih Gambar</a>
+          </div>
+      </div>
 
-  <div class="row control-group">
-    <div class="form-group col-xs-12">
-      <label>Home Picture</label>
-      <img src="{{asset(@$home_picture->value)}}" alt="" id="current_image_1" /> 
-      <input type="text" id="feature_image_1" name="home_picture" class="form-control" value="{{@$home_picture->value}}"/>
-      <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih Gambar</a>
-    </div>
-  </div>
+      <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Home Maskot</label>
+          <div class="col-sm-10">
+              <input type="text" id="feature_image_1" name="home_maskot" class="form-control" value="{{@$home_maskot->value}}"/>
+              <img src="{{asset(@$home_maskot->value)}}" alt="" id="current_image_1" /> 
+              <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih Gambar</a>
+          </div>
+      </div>
 
-  <div class="row control-group">
-    <div class="form-group col-xs-12">
-      <label>Home Maskot</label>
-      <img src="{{asset(@$home_maskot->value)}}" alt="" id="current_image_1" /> 
-      <input type="text" id="feature_image_1" name="home_maskot" class="form-control" value="{{@$home_maskot->value}}"/>
-      <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih Gambar</a>
-    </div>
-  </div>
+      <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">History</label>
+          <div class="col-sm-10">
+              <textarea rows="5" class="form-control editor" placeholder="Content of your news" id="content" name="history" required>{{@$history->text}}</textarea>
+              <p class="help-block text-danger"></p>
+          </div>
+      </div>
 
-
-  <div class="row control-group">
-    <div class="form-group col-xs-12">
-      <label>History</label>
-      <textarea rows="5" class="form-control editor" placeholder="Content of your news" id="content" name="history" required>{{@$history->text}}</textarea>
-      <p class="help-block text-danger"></p>
-    </div>
-  </div>
-
-  <br>
-  <div id="success"></div>
-  <div class="row">
-    <div class="form-group col-xs-12">
-      <button type="submit" class="btn btn-default">Simpan</button> 
-    </div>
-  </div>
-</form>
+      <div id="success"></div>
+        <div class="form-group">
+          <div class="col-xs-12 ">
+            <button type="submit" class="btn btn-default pull-right">Simpan</button> 
+        </div>
+      </div>
+  </form>
+</div>
 
 @stop
 

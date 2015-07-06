@@ -2,57 +2,51 @@
 
 @section ('content')
 
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Berita</h1>
-      <a href="{{url('/admin/news/create')}}" class="btn btn-default"><i class="fa fa-plus"></i> Tambah Berita</a>
-    </div>
-    <!-- /.col-lg-12 -->
+<div class="row">
+  <div class="col-md-6">
+    <h3><i class="fa fa-angle-right"></i> Berita </h3>
   </div>
-  <!-- /.row -->
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="panel panel-default">
-        <!-- /.panel-heading -->
-        <div class="panel-body">
-          <div class="dataTable_wrapper">
-            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-              <thead>
+  <div class="col-md-6">
+    <a href="{{url('/admin/news/create')}}" class="btn btn-default pull-right" style="margin-top:20px"><i class="fa fa-plus"></i> Tambah Berita</a>
+  </div>
+</div>
+
+<div class="row"> 
+    <div class="col-md-12 mt">
+      <div class="content-panel">
+            <table class="table table-hover">
+            <h4><i class="fa fa-angle-right"></i> Item Kanal</h4>
+            <hr>
+                <thead>
                 <tr>
+                  <th>#</th>
                   <th>Judul</th>
-                  <th>Waktu</th>
+                  <th>Konten</th>
                   <th>Gambar</th>
-                  <th>Menu</th>
+                  <th>Waktu</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
 
                 @foreach ($news as $news_item)
                 <tr class="odd gradeX">
+                  <td>{{$news_item->id}}</td>
                   <td>{{$news_item->title}}</td>
-                  <td>{{$news_item->timestamp}}</td>
+                  <td>{{str_limit($news_item->content, $limit = 100, $end = '...')}}</td>
                   <td><img src="{{asset($news_item->image)}}" alt="" class="image-bulk"></td>
-                  <td class="center">
-                    <a href="{{url('/admin/news/update/'.$news_item->id)}}" class="btn btn-default">
-                      <i class="fa fa-pencil"></i>
-                    </a>
-                    <a href="{{url('/admin/news/delete/'.$news_item->id)}}" class="btn btn-default" onclick="return confirm('Yakin akan menghapus item ini?');">
-                      <i class="fa fa-remove"></i>
-                    </a>
+                  <td>{{$news_item->timestamp}}</td>
+                  <td>
+                    <a href="{{url('/admin/news/update/'.$news_item->id)}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                    <a href="{{url('/admin/news/delete/'.$news_item->id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
                   </td>
                 </tr>
                 @endforeach
 
               </tbody>
             </table>
-          </div>
         </div>
-        <!-- /.panel-body -->
-      </div>
-      <!-- /.panel -->
     </div>
-    <!-- /.col-lg-12 -->
-  </div>
-  <!-- /.row -->
+</div>
 
 @stop

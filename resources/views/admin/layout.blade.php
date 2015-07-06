@@ -1,16 +1,15 @@
 @include ('admin.header')
   
-<div id="wrapper">
+<section id="container" >
 
-  @include('admin.nav')
+    @include('admin.nav')
+    <section id="main-content">
+        <section class="wrapper">
+            @yield('content')
+        </section>
+    </section>
 
-  <div id="page-wrapper">
-
-    @yield('content')
-
-  </div>
-
-</div>
+</section>
 
     <!-- jQuery -->
     <script src="{{asset('admin/bower_components/jquery/dist/jquery.min.js')}}"></script>

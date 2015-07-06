@@ -1,41 +1,40 @@
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Infia Dashboard</a>
-    </div>
-    <!-- /.navbar-header -->
 
-    <ul class="nav navbar-top-links navbar-right">
-
-        <!-- /.dropdown -->
+<header class="header black-bg">
+  <div class="sidebar-toggle-box">
+      <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+  </div>
+<a href="#" class="logo"><b>Infia Dashboard</b></a>
+<div class="nav notify-row" id="top_menu">
+    <ul class="nav pull-right top-menu">
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                <i class="fa fa-tasks"></i>
             </a>
-            <ul class="dropdown-menu dropdown-user">
+            <ul class="dropdown-menu extended tasks-bar">
+                <div class="notify-arrow notify-arrow-green"></div>
+                <li>
+                    <p class="green">Hello</p>
+                </li>
                 <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                </li>
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                </li>
-                <li class="divider"></li>
-                <li><a href="{{url('/auth/logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <li><a href="{{url('/auth/logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                 </li>
             </ul>
-            <!-- /.dropdown-user -->
         </li>
-        <!-- /.dropdown -->
     </ul>
-    <!-- /.navbar-top-links -->
+</div>
+</header>
 
-    <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-            <ul class="nav" id="side-menu">
+    <aside>
+        <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+              
+                <p class="centered"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                <h5 class="centered">{{{ Auth::user()->name }}}</h5>
+                <h6 class="centered">{{{ Auth::user()->email }}}</h6>
+                    
                 <li>
                     {!!Form::link_menu('admin/about', '<i class="fa fa-question-circle fa-fw"></i> About')!!}
                 </li>
@@ -51,9 +50,8 @@
                 <li>
                     {!!Form::link_menu('admin/user', '<i class="fa fa-user fa-fw"></i> Users')!!}
                 </li>
+
             </ul>
+              <!-- sidebar menu end-->
         </div>
-        <!-- /.sidebar-collapse -->
-    </div>
-    <!-- /.navbar-static-side -->
-</nav>
+  </aside>
