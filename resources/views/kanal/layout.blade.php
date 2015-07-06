@@ -13,7 +13,7 @@
   </head>
   <body>
     
-    <div id="wrapper" class="kanal-wrapper">
+    <div id="wrapper" class="kanal-wrapper fixed">
       
       @include('nav')
       
