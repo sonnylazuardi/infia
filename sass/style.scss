@@ -476,3 +476,19 @@ img.img-news-header2{
     width: 992px;
   }
 }
+
+#cboxOverlay{
+  background-color:#565656 !important; 
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}

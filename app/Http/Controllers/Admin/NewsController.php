@@ -15,9 +15,9 @@ class NewsController extends Controller {
 	 */
 	public function getIndex()
 	{
-		$news = News::orderBy('created_at', 'desc')->get();
-
-		return view('admin.news.index', compact('news'));
+		$news = News::orderBy('created_at', 'desc')->paginate(10);;
+		$pinnedNews = News::where('pinned',true)->first();
+		return view('admin.news.index', compact('news','pinnedNews'));
 	}
 
 	/**
@@ -95,6 +95,10 @@ class NewsController extends Controller {
 	    			'image'=>$item,
 	    		]);
 	    	}
+	    }
+
+	    if ($pinned = $request->input('pinned')){
+	    	$old_pinned = News::where('pinned',true)->update(['pinned' => false]);
 	    }
 
 	    $news->save();

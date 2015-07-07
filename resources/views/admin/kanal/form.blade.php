@@ -45,7 +45,9 @@
           <label class="col-sm-2 col-sm-2 control-label">Gambar</label>
           <div class="col-sm-10">
               <input type="text" id="feature_image" name="image" class="form-control" value="{{$item->image}}"/>
-              <img style="padding-top:10px"  src="{{asset($item->image)}}" alt="" id="current_image" height="150px"/> 
+              @if (!str_is(@$item->image,""))
+              <img style="padding-top:10px"  src="{{asset($item->image)}}" alt="" id="current_image" height="150px"/>
+              @endif
               <a href="" class="popup_selector" data-inputid="feature_image">Pilih</a>
           </div>
       </div>

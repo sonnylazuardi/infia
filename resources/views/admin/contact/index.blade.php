@@ -17,10 +17,9 @@
                 <tr>
                     <th>#</th>
                     <th>Waktu</th>
-                    <th>Nama</th>
+                    <th>Pengirim</th>
                     <th>Subjek</th>
                     <th>Pesan</th>
-                    <th>Email</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -29,10 +28,12 @@
                   <tr>
                     <td>{{$contact->id}}</td>
                     <td>{{$contact->timestamp}}</td>
-                    <td>{{$contact->name}}</td>
+                    <td>
+                      <b>{{$contact->name}}</b><br>
+                      <a  href="mailto:{{$contact->email}}" >{{$contact->email}}</a>
+                    </td>
                     <td>{{$contact->subject}}</td>
                     <td>{{$contact->message}}</td>
-                    <td>{{$contact->email}}</td>
                     <td>
                       <a href="{{url('/admin/kanal/delete/'.$contact->id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
                     </td>
@@ -40,6 +41,9 @@
                   @endforeach
                 </tbody>
             </table>
+        </div>
+        <div class="pull-right pagination-custom">
+          {!! $contacts->render() !!}
         </div>
     </div>
 </div>

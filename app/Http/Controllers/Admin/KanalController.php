@@ -14,7 +14,7 @@ class KanalController extends Controller {
 	 */
 	public function getIndex()
 	{
-		$items = Kanal::orderBy('created_at', 'desc')->get();
+		$items = Kanal::orderBy('created_at', 'desc')->paginate(10);
 
 		return view('admin.kanal.index', compact('items'));
 	}

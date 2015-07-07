@@ -15,4 +15,9 @@ class Kanal extends Model {
         'image',
     ];
 
+    public function getTimestampAttribute()
+    {
+        return \Carbon\Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans();
+    }
+
 }

@@ -38,6 +38,7 @@
 <script src="{{asset('js/imageMapResizer.min.js')}}"></script>
 <script>
     $(document).ready(function() {
+        console.log("Hi");
         $('map').imageMapResize();
     });
 </script>
