@@ -33,7 +33,7 @@
                   <td>{{$user->name}}</td>
                   <td>{{$user->email}}</td>
                   <td>
-                    <a href="{{url('/admin/user/update/'.$user->id)}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                    <a href="{{url('/admin/user/update/'.$user->id)}}" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></a>
                     <a href="{{url('/admin/user/delete/'.$user->id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
                   </td>
                 </tr>
@@ -41,6 +41,9 @@
                 
               </tbody>
             </table>
+        </div>
+        <div class="pull-right pagination-custom">
+          {!! $users->render() !!}
         </div>
     </div>
 </div>

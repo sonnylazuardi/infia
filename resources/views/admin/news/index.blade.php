@@ -15,14 +15,55 @@
     <div class="col-md-12 mt">
       <div class="content-panel">
             <table class="table table-hover">
+            <h4><i class="fa fa-angle-right"></i> Pinned</h4>
+            <hr>
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Gambar</th>
+                  <th>Judul</th>
+                  <th>Konten</th>
+                  <th>Waktu</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                @if(isset($pinnedNews->id))
+                  <td>{{$pinnedNews->id}}</td>
+                  <td><img src="{{asset($pinnedNews->image)}}" alt="" class="image-bulk"></td>
+                  <td>
+                    <b>{{$pinnedNews->title}}</b>
+                    @if($pinnedNews->pinned == 1)
+                      <br>
+                      <span class="label label-info">Pinned</span>
+                    @endif
+                  </td>
+                  <td>{{str_limit($pinnedNews->content, $limit = 100, $end = '...')}}</td>
+                  <td>{{$pinnedNews->timestamp}}</td>
+                  <td class="pull-right">
+                    <a href="{{url('/admin/news/update/'.$pinnedNews->id)}}" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></a>
+                    <a href="{{url('/admin/news/delete/'.$pinnedNews->id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
+                  </td>
+                </tr>
+                @endif
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row"> 
+    <div class="col-md-12 mt">
+      <div class="content-panel">
+            <table class="table table-hover">
             <h4><i class="fa fa-angle-right"></i> Item Berita</h4>
             <hr>
                 <thead>
                 <tr>
                   <th>#</th>
+                  <th>Gambar</th>
                   <th>Judul</th>
                   <th>Konten</th>
-                  <th>Gambar</th>
                   <th>Waktu</th>
                   <th></th>
                 </tr>
@@ -30,14 +71,20 @@
               <tbody>
 
                 @foreach ($news as $news_item)
-                <tr class="odd gradeX">
+                <tr>
                   <td>{{$news_item->id}}</td>
-                  <td>{{$news_item->title}}</td>
-                  <td>{{str_limit($news_item->content, $limit = 100, $end = '...')}}</td>
                   <td><img src="{{asset($news_item->image)}}" alt="" class="image-bulk"></td>
-                  <td>{{$news_item->timestamp}}</td>
                   <td>
-                    <a href="{{url('/admin/news/update/'.$news_item->id)}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                    <b>{{$news_item->title}}</b>
+                    @if($news_item->pinned == 1)
+                      <br>
+                      <span class="label label-info">Pinned</span>
+                    @endif
+                  </td>
+                  <td>{{str_limit($news_item->content, $limit = 100, $end = '...')}}</td>
+                  <td>{{$news_item->timestamp}}</td>
+                  <td class="pull-right">
+                    <a href="{{url('/admin/news/update/'.$news_item->id)}}" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></a>
                     <a href="{{url('/admin/news/delete/'.$news_item->id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
                   </td>
                 </tr>
@@ -45,6 +92,10 @@
 
               </tbody>
             </table>
+            
+        </div>
+        <div class="pull-right pagination-custom">
+          {!! $news->render() !!}
         </div>
     </div>
 </div>

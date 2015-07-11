@@ -21,9 +21,12 @@
 
       @yield('content')
 
+      @yield('mobile')
+
     </div>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="{{asset('js/vendor.js')}}"></script>
+    <script src="{{asset('js/enquire.min.js')}}"></script>
 
     @yield('script')
 

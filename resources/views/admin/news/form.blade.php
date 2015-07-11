@@ -27,6 +27,17 @@
       </div>
 
       <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Pin</label>
+          <div class="col-sm-10">
+              <select class="form-control" name="pinned" id="pinned" value="{{$news->pinned}}">
+                <option value="0">Tidak</option>
+                <option value="1">Ya</option>
+              </select>
+          </div>
+          
+      </div>
+
+      <div class="form-group">
           <label class="col-sm-2 col-sm-2 control-label">Isi Berita</label>
           <div class="col-sm-10">
               <textarea rows="5" class="form-control editor" placeholder="Content of your news" id="content" name="content" required>{{$news->content}}</textarea>
@@ -50,7 +61,9 @@
             <div class="col-xs-12">
               
               <input type="text" id="feature_image_1" name="images[]" class="form-control" value="{{@$news->images[0]->image}}"/>
+              @if (!str_is(@$news->images[0]->image,""))
               <img src="{{asset(@$news->images[0]->image)}}" alt="" id="current_image_1" style="padding-top:10px" height="150px" /> 
+              @endif
               <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih</a>
             </div>
           </div>
@@ -58,15 +71,18 @@
             <div class="col-xs-12">
               
               <input type="text" id="feature_image_2" name="images[]" class="form-control" value="{{@$news->images[1]->image}}"/>
-              <img src="{{asset(@$news->images[1]->image)}}" alt="" id="current_image_2" style="padding-top:10px" height="150px" /> 
+              @if (!str_is(@$news->images[1]->image,""))
+              <img src="{{asset(@$news->images[1]->image)}}" alt="" id="current_image_2" style="padding-top:10px" height="150px" />
+              @endif 
               <a href="" class="popup_selector" data-inputid="feature_image_2" data-imageid="current_image_2">Pilih</a>
             </div>
           </div>
           <div class="row">
             <div class="col-xs-12">
-              
               <input type="text" id="feature_image_3" name="images[]" class="form-control" value="{{@$news->images[2]->image}}"/>
-              <img src="{{asset(@$news->images[2]->image)}}" alt="" id="current_image_3" style="padding-top:10px" height="150px" /> 
+              @if (!str_is(@$news->images[2]->image,""))
+              <img src="{{asset(@$news->images[2]->image)}}" alt="" id="current_image_3" style="padding-top:10px" height="150px" />
+              @endif
               <a href="" class="popup_selector" data-inputid="feature_image_3" data-imageid="current_image_3">Pilih</a>
             </div>
           </div>
@@ -74,14 +90,18 @@
             <div class="col-xs-12">
               
               <input type="text" id="feature_image_4" name="images[]" class="form-control" value="{{@$news->images[3]->image}}"/>
+              @if (!str_is(@$news->images[3]->image,""))
               <img src="{{asset(@$news->images[3]->image)}}" alt="" id="current_image_4" style="padding-top:10px" height="150px" /> 
+              @endif
               <a href="" class="popup_selector" data-inputid="feature_image_4" data-imageid="current_image_4">Pilih</a>
             </div>
           </div>
           <div class="row">
             <div class="col-xs-12">
               <input type="text" id="feature_image_5" name="images[]" class="form-control" value="{{@$news->images[4]->image}}"/>
-              <img src="{{asset(@$news->images[4]->image)}}" alt="" id="current_image_5" style="padding-top:10px" height="150px" /> 
+              @if (!str_is(@$news->images[4]->image,""))
+              <img src="{{asset(@$news->images[4]->image)}}" alt="" id="current_image_5" style="padding-top:10px" height="150px" />
+              @endif
               <a href="" class="popup_selector" data-inputid="feature_image_5" data-imageid="current_image_5">Pilih</a>
             </div>
           </div>
@@ -133,6 +153,14 @@
   <script src="{{asset('packages/barryvdh/elfinder/js/standalonepopup.js')}}"></script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB52sSHDcDbRehaBgmFiRx2E_j8L8qMsFY"></script>
+
+   <!--script for this page-->
+    <script src="{{asset('/admin/gum/js/jquery-ui-1.9.2.custom.min.js')}}"></script>
+
+  <!--custom switch-->
+  <script src="{{asset('admin/gum/js/bootstrap-switch.js')}}"></script>
+  <!--custom checkbox & radio-->
+  <script type="text/javascript" src="{{asset('admin/gum/js/bootstrap-inputmask/bootstrap-inputmask.min.js')}}"></script>
 
   <script>
 

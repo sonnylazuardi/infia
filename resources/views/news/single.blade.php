@@ -8,10 +8,10 @@
     		<div style="background:url('{{asset('/img/spongebob.jpg')}}') no-repeat center center;" class="feature-image">
     		</div>
         <div class="img-slider">
-          <div class="row">
+          <div class="row row-centered">
             @foreach ($item->images as $image)
               @if ($image->image)
-                <div class="col-xs-3">
+                <div class="col-xs-3 col-centered">
                   <a class="image_popup" href="{{asset($image->image)}}" title="">
                     <div class="img-item">
                       <img src="{{asset($image->image)}}" alt="">

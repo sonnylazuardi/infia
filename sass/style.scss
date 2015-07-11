@@ -328,6 +328,7 @@ img.img-news-header2{
 
 .kanal-img {
   height:100vh;
+  // width: 100%;
 }
 
 .kanal-img-container {
@@ -439,6 +440,7 @@ img.img-news-header2{
   /* margin-left: -100px; */
   left: 50px;
   transition: all .5s ease;
+  z-index: 50;
 }
 
 .kanal-content {
@@ -475,4 +477,37 @@ img.img-news-header2{
   .container-kanal {
     width: 992px;
   }
+}
+
+
+
+#pointer {
+  background: url('../files/kanal/select.png');
+  width: 73px;
+  height: 67px;
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.kanal-box {
+  position: relative;
+}
+
+#cboxOverlay{
+  background-color:#565656 !important; 
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
 }

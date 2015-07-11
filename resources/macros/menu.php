@@ -1,7 +1,7 @@
 <?php
 
 Form::macro('link_menu', function($route, $text) {
-	if(Request::is($route) || Request::is("*/".$route."/*")) {
+	if(Request::is($route) || Request::is($route."/*")) {
 		$active = 'class="active"';
 	} else {
 		$active = '';
@@ -10,7 +10,7 @@ Form::macro('link_menu', function($route, $text) {
 });
 
 Form::macro('list_menu', function($route, $text) {
-	if(Request::is($route) || Request::is("*/".$route."/*")) {
+	if(Request::is($route) || Request::is($route."/*")) {
 		$active = 'class="active"';
 	} else {
 		$active = '';

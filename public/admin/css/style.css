@@ -14,6 +14,30 @@
 	background-color:#fed519 !important;
 }
 
+.pagination-custom span {
+	border-color:#424A5D !important;
+	background-color:#424A5D !important;
+	color: #AEB2B7 !important;
+}
+
+.pagination-custom a {
+	border-color:#424A5D !important;
+	background-color:#424A5D !important;
+	color: #AEB2B7 !important;
+}
+
+.pagination-custom a:hover {
+	border-color:#68DFF0 !important;
+	background-color:#68DFF0 !important;
+	color: #fff !important;
+}
+
+.pagination-custom .active span {
+	border-color:#68DFF0 !important;
+	background-color:#68DFF0 !important;
+	color:#fff !important;
+}
+
 /*#wrapper {
   background-color: #424a5d;
 }
