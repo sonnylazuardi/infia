@@ -13,6 +13,7 @@ class Kanal extends Model {
         'instagramId',
         'color',
         'image',
+        'icon',
     ];
 
     public function getTimestampAttribute()

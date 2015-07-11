@@ -15,8 +15,8 @@ class KanalController extends Controller {
 	 */
 	public function getIndex()
 	{
-		//
-		return view('kanal.index');
+		$items = Kanal::all();
+		return view('kanal.index', compact('items'));
 	}
 
 	public function getCategory($name)

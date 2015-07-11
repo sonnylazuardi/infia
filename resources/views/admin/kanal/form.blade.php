@@ -53,6 +53,17 @@
       </div>
 
       <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Icon</label>
+          <div class="col-sm-10">
+              <input type="text" id="feature_icon" name="icon" class="form-control" value="{{$item->icon}}"/>
+              @if (!str_is(@$item->icon,""))
+              <img style="padding-top:10px"  src="{{asset($item->icon)}}" alt="" id="current_icon" height="150px"/>
+              @endif
+              <a href="" class="popup_selector" data-inputid="feature_icon">Pilih</a>
+          </div>
+      </div>
+
+      <div class="form-group">
           <label class="col-sm-2 col-sm-2 control-label">Akun Instagram</label>
           <div class="col-sm-10">
               <input type="text" class="form-control" placeholder="Akun Instagram" name="instagramAccount" id="instagramAccount" required value="{{$item->instagramAccount}}">
@@ -89,5 +100,29 @@
 
   <script src="{{asset('js/jquery.colorbox-min.js')}}"></script>
   <script src="{{asset('packages/barryvdh/elfinder/js/standalonepopup.js')}}"></script>
+  <script>
+    $(document).on('click','.popup_selector',function (event) {
+      event.preventDefault();
+      var updateID = $(this).attr('data-inputid'); // Btn id clicked
+      imageID = $(this).attr('data-imageid'); 
+      var elfinderUrl = '{{url('/')}}/elfinder/popup/';
 
+      // trigger the reveal modal with elfinder inside
+      var triggerUrl = elfinderUrl + updateID;
+      $.colorbox({
+        href: triggerUrl,
+        fastIframe: true,
+        iframe: true,
+        width: '70%',
+        height: '80%'
+      });
+
+    });
+    // function to update the file selected by elfinder
+    function processSelectedFile(filePath, requestingField) {
+      filePath = filePath.replace(/\\/g, '/');
+      $('#' + requestingField).val(filePath);
+      $('#' + imageID).attr('src', '{{url('/')}}/' + filePath);
+    }
+  </script>
 @stop

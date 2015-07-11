@@ -1,7 +1,7 @@
 @extends('kanal.layout')
 
 @section('content')
-    <div class="container-fluid kanal-container">
+    <div class="container-fluid kanal-container" id="desktop">
         <div class="kanal">
             @include('kanal.nav')
             <div class="kanal-content">
@@ -33,16 +33,41 @@
 
 @section('mobile')
 
-    <div class="mobile">
-        
+    <div class="page-content-wrapper" id="mobile">
+        <div class="mobile__item-list">
+            @foreach ($items as $item)
+                <div class="mobile__item">
+                    <div class="row">
+                        <div class="col-xs-3 text-right">
+                            <div class="mobile__icon">
+                                <img src="{{asset($item->icon)}}" alt="">
+                            </div>        
+                        </div>
+                        <div class="col-xs-9 mobile__padding">
+                            <div class="mobile__account">
+                                {!!'@'.$item->instagramAccount!!}
+                            </div>
+                            <div class="mobile__description">
+                                {{$item->description}}
+                            </div> 
+                            <div class="mobile__instagram">
+                                <a href="https://instagram.com/{{$item->instagramAccount}}">
+                                    <i class="fa fa-instagram"></i> To Instagram 
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
 
 @endsection
 
-
 @section('script')
 
 <script src="{{asset('js/jquery.rwdImageMaps.min.js')}}"></script>
+<script src="{{asset('js/enquire.min.js')}}"></script>
 <script>
     $(document).ready(function() {
 
@@ -58,6 +83,30 @@
             _y = (_y - 30) / 1.5;
 
             $('#pointer').css({left: _x + 'px', top: _y + 'px'});
+        });
+
+        enquire.register("screen and (min-width: 1025px)", {
+            match : function() {
+                $('#mobile').hide();
+                $('#desktop').show();
+            }
+        });
+
+
+        enquire.register("screen and (max-width: 1024px) and (min-width: 451px)", {
+            match : function() {
+                $('#desktop').hide();
+                $('#mobile').show();
+                $('#mobile').removeClass('tablet');
+            }
+        });
+
+        enquire.register("screen and (max-width: 450px)", {
+            match : function() {
+                $('#desktop').hide();
+                $('#mobile').show();
+                $('#mobile').addClass('tablet');
+            }
         });
     });
 </script>
