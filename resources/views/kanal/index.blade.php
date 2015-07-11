@@ -45,6 +45,7 @@
 <script src="{{asset('js/jquery.rwdImageMaps.min.js')}}"></script>
 <script>
     $(document).ready(function() {
+
         $('img[usemap]').rwdImageMaps();
         $('area').hover(function() {
 
