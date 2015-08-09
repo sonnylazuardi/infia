@@ -11,12 +11,12 @@
 		                </div>
 		                <div style="background-color:{{$item->color}}" class="kanal-single-content">
 		                	<div class="container container-kanal container-small">
-		                		<h2 id="instagram-{{$item->id}}-target" class="kanal-single-title">{{$item->title}}</h2>
+		                		<h2 style="color:{{$item->titlecolor}}" id="instagram-{{$item->id}}-target" class="kanal-single-title">{{$item->title}}</h2>
 		                	</div>
 		                	<div style="display:none" class="container container-kanal" show-target="instagram-{{$item->id}}-target" instagram-id="{{$item->instagramId}}">
 			                	<p>{{$item->description}}</p>
 	                        	<div class="kanal-instagram" id="instagram-{{$item->instagramId}}"></div>
-                                <a class="btn btn-warning btn-kanal" href="https://instagram.com/{{$item->instagramAccount}}"> @ {{$item->instagramAccount}} </a>
+                                <a class="btn btn-warning btn-kanal" href="https://instagram.com/{{$item->instagramAccount}}"><i class="fa fa-instagram"></i> &#64;{{$item->instagramAccount}} </a>
                         	</div>
 		                </div>
 	                </div>
@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-    
+
 
 @endsection
 
@@ -41,5 +41,5 @@
     </script>
 
     @include('kanal.instafeed')
-  
+
 @endsection

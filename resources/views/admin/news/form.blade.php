@@ -34,7 +34,7 @@
                 <option value="1">Ya</option>
               </select>
           </div>
-          
+
       </div>
 
       <div class="form-group">
@@ -49,7 +49,7 @@
           <label class="col-sm-2 col-sm-2 control-label">Gambar Utama</label>
           <div class="col-sm-10">
               <input type="text" id="feature_image" name="image" class="form-control" value="{{$news->image}}"/>
-              <img style="padding-top:10px" src="{{asset($news->image)}}" alt="" id="current_image" height="150px" /> 
+              <img style="padding-top:10px" src="{{asset($news->image)}}" alt="" id="current_image" height="150px" />
               <a href="" class="popup_selector" data-inputid="feature_image">Pilih</a>
           </div>
       </div>
@@ -59,21 +59,21 @@
         <div class="col-sm-10" name="img-form-container" id="img-form-container">
           <div class="row">
             <div class="col-xs-12">
-              
+
               <input type="text" id="feature_image_1" name="images[]" class="form-control" value="{{@$news->images[0]->image}}"/>
               @if (!str_is(@$news->images[0]->image,""))
-              <img src="{{asset(@$news->images[0]->image)}}" alt="" id="current_image_1" style="padding-top:10px" height="150px" /> 
+              <img src="{{asset(@$news->images[0]->image)}}" alt="" id="current_image_1" style="padding-top:10px" height="150px" />
               @endif
               <a href="" class="popup_selector" data-inputid="feature_image_1" data-imageid="current_image_1">Pilih</a>
             </div>
           </div>
           <div class="row">
             <div class="col-xs-12">
-              
+
               <input type="text" id="feature_image_2" name="images[]" class="form-control" value="{{@$news->images[1]->image}}"/>
               @if (!str_is(@$news->images[1]->image,""))
               <img src="{{asset(@$news->images[1]->image)}}" alt="" id="current_image_2" style="padding-top:10px" height="150px" />
-              @endif 
+              @endif
               <a href="" class="popup_selector" data-inputid="feature_image_2" data-imageid="current_image_2">Pilih</a>
             </div>
           </div>
@@ -88,10 +88,10 @@
           </div>
           <div class="row">
             <div class="col-xs-12">
-              
+
               <input type="text" id="feature_image_4" name="images[]" class="form-control" value="{{@$news->images[3]->image}}"/>
               @if (!str_is(@$news->images[3]->image,""))
-              <img src="{{asset(@$news->images[3]->image)}}" alt="" id="current_image_4" style="padding-top:10px" height="150px" /> 
+              <img src="{{asset(@$news->images[3]->image)}}" alt="" id="current_image_4" style="padding-top:10px" height="150px" />
               @endif
               <a href="" class="popup_selector" data-inputid="feature_image_4" data-imageid="current_image_4">Pilih</a>
             </div>
@@ -112,7 +112,7 @@
           <div class="col-xs-12 ">
            <button type="button" class="btn btn-default pull-right" id="add-img-btn" name="add-img-btn" onclick="addImgForm()">
               <span class="fa fa-plus"></span> Tambah
-           </button> 
+           </button>
         </div>
       </div>
 
@@ -137,7 +137,7 @@
       <div id="success"></div>
         <div class="form-group">
           <div class="col-xs-12 ">
-            <button type="submit" class="btn btn-theme pull-right">Simpan</button> 
+            <button type="submit" class="btn btn-theme pull-right">Simpan</button>
         </div>
       </div>
   </form>
@@ -186,7 +186,7 @@
 
     $("#longitude").val(marker.getPosition().lng());
     $("#latitude").val(marker.getPosition().lat());
-    
+
     google.maps.event.addListener(marker, "dragend", function(event) {
       $("#longitude").val(marker.getPosition().lng());
       $("#latitude").val(marker.getPosition().lat());
@@ -208,15 +208,15 @@
       $( 'textarea.editor' ).ckeditor({
         filebrowserBrowseUrl : '{{url('/')}}/elfinder/ckeditor'
       });
-      
+
     } );
-    
+
     var imageID = '';
 
     $(document).on('click','.popup_selector',function (event) {
       event.preventDefault();
       var updateID = $(this).attr('data-inputid'); // Btn id clicked
-      imageID = $(this).attr('data-imageid'); 
+      imageID = $(this).attr('data-imageid');
       var elfinderUrl = '{{url('/')}}/elfinder/popup/';
 
       // trigger the reveal modal with elfinder inside

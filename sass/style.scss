@@ -81,15 +81,15 @@ body {
 .owl-theme .owl-controls .owl-buttons div {
   position: absolute;
 }
- 
+
 .owl-theme .owl-controls .owl-buttons .owl-prev{
   left: 0;
-  top: 40%; 
+  top: 40%;
   background: transparent;
   color: #999;
   font-size: 4em;
 }
- 
+
 .owl-theme .owl-controls .owl-buttons .owl-next{
   right: 0;
   top: 40%;
@@ -113,7 +113,7 @@ body {
     margin-top: 0;
   }
 
-  p, .info { 
+  p, .info {
     font-size: .9em;
   }
 }
@@ -137,11 +137,11 @@ form#contact {
 
 
 .home-history {
-  
+
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
   padding: 150px 20%;
-  
+
   .history-title {
     letter-spacing: 10px;
     font-size: 1.5em;
@@ -161,7 +161,7 @@ form#contact {
 }
 
 .home-news {
-  
+
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
   padding: 80px 10%;
@@ -308,7 +308,7 @@ img.img-news-header2{
     border: 10px solid #feeba7;
     background: #feeba7;
     height: 180px;
-    width: 180px; 
+    width: 180px;
     text-align: center;
     .item-title {
       a {
@@ -373,7 +373,7 @@ img.img-news-header2{
   padding:0px;
   text-align:center;
   .container {
-    padding-bottom: 80px;
+    padding-bottom: 50px;
     cursor: pointer;
   }
   .container.container-small{
@@ -389,7 +389,7 @@ img.img-news-header2{
     font-weight:normal;
   }
   img {
-    padding: 2px;
+    padding: 5px;
   }
 }
 
@@ -495,7 +495,7 @@ img.img-news-header2{
 }
 
 #cboxOverlay{
-  background-color:#565656 !important; 
+  background-color:#565656 !important;
 }
 
 .row-centered {
@@ -519,7 +519,7 @@ img.img-news-header2{
 }
 
 .mobile__item-list {
-  
+
   .mobile__item {
     border-bottom: 1px solid #fff;
     padding: 10px 0;

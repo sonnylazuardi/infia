@@ -16,12 +16,13 @@ class CreateKanalsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('title');
-	        $table->string('category');
-	        $table->string('description');
-	        $table->string('instagramAccount');
-	        $table->string('instagramId');
-	        $table->string('color');
-	        $table->string('image');
+      $table->string('category');
+      $table->string('description');
+      $table->string('instagramAccount');
+      $table->string('instagramId');
+      $table->string('color');
+			$table->string('titlecolor');
+      $table->string('image');
 			$table->timestamps();
 		});
 	}
