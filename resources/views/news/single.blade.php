@@ -31,7 +31,9 @@
     		<div class="front-news-description">
     			<p>{!!$item->content!!}</p>
     		</div>
+        @if ($item->usemap)
     		<div id="map" style="width:100%; height:150px"></div>
+        @endif
     	</div>
     </div>
   </div>
@@ -67,5 +69,5 @@
         });
     });
   </script>
-  
+
 @endsection

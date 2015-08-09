@@ -116,6 +116,17 @@
         </div>
       </div>
 
+      <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Pakai Peta</label>
+          <div class="col-sm-10">
+              <select class="form-control" name="usemap" id="usemap" value="{{$news->usemap}}">
+                <option value="0">Tidak</option>
+                <option value="1">Ya</option>
+              </select>
+          </div>
+
+      </div>
+
       <div clas="row control-group">
         <div class="form-group col-xs-12">
           <label>Lokasi</label>
