@@ -13,7 +13,7 @@
           <img class="" src="{{asset($pinnedNews->image)}}"></img>
         </div>
         <div class="front-news-more">
-          <a>..See More..</a>
+          <a href="{{url('/news/single/'.$pinnedNews->id)}}">..See More..</a>
         </div>
         <div class="front-news-full">
           <p>{!!$pinnedNews->content!!} </p>
@@ -64,5 +64,13 @@
 @endsection
 
 @section('script')
-  
+  <script>
+    $(document).ready(function() {
+      
+      $(".img-news-header-full").imgLiquid({
+        fill: false
+      });
+
+    });
+  </script>
 @endsection
