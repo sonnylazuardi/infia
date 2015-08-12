@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="{{asset('css/custom.css')}}" />
   </head>
   <body>
-    
     <div id="wrapper">
       
       @include('nav')

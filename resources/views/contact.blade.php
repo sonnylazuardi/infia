@@ -14,20 +14,17 @@
 
           <div class="info">
             <div>
-              <i class="fa fa-phone"></i> +44(0) 208 123 3852
+              <i class="fa fa-envelope"></i> hello@infia.co
             </div>
             <div>
-              <i class="fa fa-phone"></i> +44(0) 208 123 3852
+              <i class="fa fa-phone"></i> 021 - 29305285
             </div>
             <div>
-              <i class="fa fa-envelope"></i> email@infia.co
-            </div>
-            <div>
-              <i class="fa fa-twitter"></i> @infia_co
+              <i class="fa fa-instagram"></i> instagram.com/infia.co
             </div>
           </div>
 
-          <p>or use our online form below</p>
+          <p>Atau mengisi formulir dibawah ini</p>
 
           
           @if (Session::has('alert'))
@@ -40,16 +37,16 @@
           <form method="post" id="contact">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div>
-              <input type="text" class="form-control" placeholder="Name" name="name">
+              <input type="text" class="form-control" placeholder="Nama" name="name">
             </div>
             <div>
               <input type="email" class="form-control" placeholder="Email" name="email">
             </div>
             <div>
-              <input type="text" class="form-control" placeholder="Subject" name="subject">
+              <input type="text" class="form-control" placeholder="Subjek" name="subject">
             </div>
             <div>
-              <textarea name="message" id="" rows="5" class="form-control" placeholder="Your Message"></textarea>
+              <textarea name="message" id="" rows="5" class="form-control" placeholder="Pesan Anda"></textarea>
             </div>
             <div>
               <button type="submit" class="btn btn-default">Send</button>

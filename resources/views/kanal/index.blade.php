@@ -52,7 +52,7 @@
                             </div>        
                         </div>
                         <div class="col-xs-9 mobile__padding">
-                            <div class="mobile__account">
+                            <div class="mobile__account" style="color: {{$item->titlecolor}}">
                                 {!!'@'.$item->instagramAccount!!}
                             </div>
                             <div class="mobile__description">

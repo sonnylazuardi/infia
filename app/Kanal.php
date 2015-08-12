@@ -14,6 +14,7 @@ class Kanal extends Model {
         'color',
         'image',
         'icon',
+        'titlecolor',
     ];
 
     public function getTimestampAttribute()

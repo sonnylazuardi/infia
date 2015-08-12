@@ -4,11 +4,11 @@
 <!-- Page Content -->
   <div id="page-content-wrapper">
     <div class="full-image"> <img src="{{asset(@$home_picture->value)}}" alt=""> </div>
-    <div class="padding">
+    <div class="padding-home">
       <div class="home-history">
         <div class="history-box">
           <div class="history-title">
-            history
+            About Us
           </div>
           {!!@$history->text!!}
         </div>

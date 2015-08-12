@@ -9,7 +9,7 @@
     <a href="{{url('/admin/kanal/create')}}" class="btn btn-default pull-right" style="margin-top:20px"><i class="fa fa-plus"></i> Tambah Item</a>
   </div>
 </div>
-<div class="row"> 
+<div class="row">
     <div class="col-md-12 mt">
       <div class="content-panel">
             <table class="table table-hover">
@@ -33,7 +33,7 @@
                     <td><img src="{{asset($item->image)}}" alt="" class="image-bulk"></td>
                     <td>
                       <b>{{$item->title}}</b><br>
-                      <span class="label" style="background-color:{{$item->color}}">{{$item->category}}</span>
+                      <span class="label" style="background-color:{{$item->titlecolor}}">{{$item->category}}</span>
                     </td>
                     <td>{{str_limit($item->description, $limit = 100, $end = '...')}}</td>
                     <td><a href="http://www.instagram.com/{{$item->instagramAccount}}">{{$item->instagramAccount}}</a><br>

@@ -5,6 +5,7 @@
 <!-- Page Content -->
   <div id="page-content-wrapper">
     <div class="padding">
+      @if($pinnedNews != null)
       <div class="container">
         <div class="front-news-title">
           <h2> {{$pinnedNews->title}}</h2>
@@ -19,10 +20,11 @@
           <p>{!!$pinnedNews->content!!} </p>
         </div>
       </div>
-      <div class="container" >
+      @endif
+      <div class="container news-container" >
         @foreach ($news as $i => $item)
         @if($i%2==0)
-	      <div class="row">	
+	      <div class="row">
 	      	<div class="col-md-3">
 	      		<img class="img-news-header2" src="{{asset($item->image)}}"></img>
           </div>
@@ -60,7 +62,7 @@
 	   </div>
     </div>
   </div>
-  
+
 @endsection
 
 @section('script')

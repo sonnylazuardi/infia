@@ -1,5 +1,5 @@
 @include ('admin.header')
-  
+
 <section id="container" >
 
     @include('admin.nav')
@@ -29,7 +29,7 @@
 
     <!-- Custom Theme JavaScript -->
     @yield('script')
-    
+
 
 </body>
 

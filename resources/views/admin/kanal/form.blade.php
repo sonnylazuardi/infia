@@ -78,16 +78,25 @@
       </div>
 
       <div class="form-group">
-          <label class="col-sm-2 col-sm-2 control-label">Warna</label>
+          <label class="col-sm-2 col-sm-2 control-label">Warna Judul</label>
           <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Warna" name="color" id="color" required value="{{$item->color}}">
+              <input type="text" id="picker-title" class="form-control" placeholder="Warna" name="titlecolor" id="titlecolor" required value="{{$item->titlecolor}}">
+              <div id="color-box-title" style="background-color:{{$item->titlecolor}};float:left;width:100px;height:10px;"></div>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Warna Latar</label>
+          <div class="col-sm-10">
+              <input type="text" id="picker" class="form-control" placeholder="Warna" name="color" id="color" required value="{{$item->color}}">
+              <div id="color-box" style="background-color:{{$item->color}};float:left;width:100px;height:10px;"></div>
           </div>
       </div>
 
       <div id="success"></div>
         <div class="form-group">
           <div class="col-xs-12 ">
-            <button type="submit" class="btn btn-theme pull-right">Simpan</button> 
+            <button type="submit" class="btn btn-theme pull-right">Simpan</button>
         </div>
       </div>
   </form>
@@ -95,6 +104,8 @@
 @stop
 
 @section ('script')
+  <script src="{{asset('js/colpick.js')}}" type="text/javascript"></script>
+
   <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
   <script src="{{asset('ckeditor/adapters/jquery.js')}}"></script>
 
@@ -104,7 +115,7 @@
     $(document).on('click','.popup_selector',function (event) {
       event.preventDefault();
       var updateID = $(this).attr('data-inputid'); // Btn id clicked
-      imageID = $(this).attr('data-imageid'); 
+      imageID = $(this).attr('data-imageid');
       var elfinderUrl = '{{url('/')}}/elfinder/popup/';
 
       // trigger the reveal modal with elfinder inside
@@ -124,5 +135,31 @@
       $('#' + requestingField).val(filePath);
       $('#' + imageID).attr('src', '{{url('/')}}/' + filePath);
     }
+
+    $('#picker').colpick({
+    	layout:'hex',
+    	submit:0,
+    	colorScheme:'light',
+    	onChange:function(hsb,hex,rgb,el,bySetColor) {
+    		$('#color-box').css('background-color','#'+hex);
+    		// Fill the text box just if the color was set using the picker, and not the colpickSetColor function.
+    		if(!bySetColor) $(el).val('#'+hex);
+    	}
+    }).keyup(function(){
+    	$(this).colpickSetColor(this.value);
+    });
+
+    $('#picker-title').colpick({
+    	layout:'hex',
+    	submit:0,
+    	colorScheme:'light',
+    	onChange:function(hsb,hex,rgb,el,bySetColor) {
+    		$('#color-box-title').css('background-color','#'+hex);
+    		// Fill the text box just if the color was set using the picker, and not the colpickSetColor function.
+    		if(!bySetColor) $(el).val('#'+hex);
+    	}
+    }).keyup(function(){
+    	$(this).colpickSetColor(this.value);
+    });
   </script>
 @stop
