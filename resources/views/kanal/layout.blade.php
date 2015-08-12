@@ -13,7 +13,7 @@
   </head>
   <body>
     
-    <div id="wrapper" class="kanal-wrapper fixed">
+    <div id="wrapper" class="kanal-wrapper">
       
       @include('nav')
       
@@ -29,6 +29,16 @@
     <script src="{{asset('js/enquire.min.js')}}"></script>
 
     @yield('script')
+
+    <script>
+      $(document).ready(function() {
+        $('a.kanal-button, .kanal-nav').hover(function() {
+          $('.kanal-nav').fadeIn(100);
+        }, function() {
+          $('.kanal-nav').fadeOut(100);
+        });
+      });
+    </script>
 
   </body>
 </html>

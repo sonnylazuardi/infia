@@ -32,7 +32,7 @@
     			<p>{!!$item->content!!}</p>
     		</div>
         @if ($item->usemap)
-    		<div id="map" style="width:100%; height:150px"></div>
+    		  <div id="map" style="width:100%; height:150px"></div>
         @endif
     	</div>
     </div>
@@ -45,22 +45,24 @@
 
   <script>
     $( document ).ready( function() {
-      // Map setup
-      var latlng = new google.maps.LatLng({{$item->latitude}}, {{$item->longitude}});
+      @if ($item->usemap)
+        // Map setup
+        var latlng = new google.maps.LatLng({{$item->latitude}}, {{$item->longitude}});
 
-      var mapOptions = {
-        zoom: 11, // set the map zoom level
-        center: latlng, // set the center region
-        disableDefaultUI: true,
-        zoomControl: true, // whether to show the zoom control beside
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      };
-      var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-      var marker = new google.maps.Marker({
-        map: map, // refer to the map you've just initialise
-        position: latlng, // set the marker position (is based on latitude & longitude)
-        draggable: false // allow user to drag the marker
-      });
+        var mapOptions = {
+          zoom: 11, // set the map zoom level
+          center: latlng, // set the center region
+          disableDefaultUI: true,
+          zoomControl: true, // whether to show the zoom control beside
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        var marker = new google.maps.Marker({
+          map: map, // refer to the map you've just initialise
+          position: latlng, // set the marker position (is based on latitude & longitude)
+          draggable: false // allow user to drag the marker
+        });
+      @endif
 
       $('.image_popup').colorbox();
 

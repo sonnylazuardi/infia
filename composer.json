@@ -8,7 +8,8 @@
 		"laravel/framework": "5.0.*",
 		"cviebrock/eloquent-sluggable": ">=3.0.0-beta",
 		"barryvdh/laravel-elfinder": "0.3.*",
-		"laravelcollective/html": "~5.0"
+		"laravelcollective/html": "~5.0",
+		"guzzlehttp/guzzle": "~5.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

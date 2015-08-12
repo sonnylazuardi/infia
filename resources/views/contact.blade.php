@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col-md-5">
         <div class="box">
-          <h1>Contact</h1>
+          <h1>Kontak</h1>
 
           <p>Silakan tinggalkan pesan untuk kami. Kami akan membaca dan membalas pesan anda :)</p>
 
@@ -49,7 +49,7 @@
               <textarea name="message" id="" rows="5" class="form-control" placeholder="Pesan Anda"></textarea>
             </div>
             <div>
-              <button type="submit" class="btn btn-default">Send</button>
+              <button type="submit" class="btn btn-default">Kirim</button>
             </div>
           </form>
         </div>

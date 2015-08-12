@@ -16,15 +16,15 @@
   }
 
   &.toggled {
-    padding-left: 250px;
+    padding-left: 200px;
 
     #sidebar-wrapper {
-      width: 250px;
+      width: 200px;
     }
 
     #page-content-wrapper {
       position: absolute;
-      margin-right: -250px;
+      margin-right: -200px;
     }
   }
 
@@ -52,10 +52,10 @@
 #sidebar-wrapper {
   z-index: 1000;
   position: fixed;
-  left: 250px;
+  left: 200px;
   width: 59px;
   height: 100%;
-  margin-left: -250px;
+  margin-left: -200px;
   overflow-y: auto;
   overflow-x: hidden;
   background: $yellow;
@@ -76,7 +76,7 @@
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 250px;
+  width: 200px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -90,6 +90,10 @@
       text-decoration: none;
       color: $light;
       font-size: 1.2em;
+      height: 50px;
+      line-height: 50px;
+      text-transform: uppercase;
+      font-size: 1.4rem;
 
       &:hover {
         text-decoration: none;
@@ -137,14 +141,14 @@
 
 @media(min-width:768px) {
   #wrapper {
-    padding-left: 250px;
+    padding-left: 200px;
 
     .logo {
       background: url('../img/logo.png') no-repeat;
       background-size: contain;
       background-position: center;
       height: 64px;
-      width: 250px;
+      width: 200px;
     }
 
     .maskot {
@@ -179,7 +183,7 @@
   }
 
   #sidebar-wrapper {
-    width: 250px;
+    width: 200px;
   }
 
   #wrapper.toggled #sidebar-wrapper {

@@ -4,6 +4,7 @@ use App\Contact;
 use Illuminate\Http\Request;
 use App\Setting;
 use App\News;
+use Mail;
 
 class HomeController extends Controller {
 
@@ -48,6 +49,15 @@ class HomeController extends Controller {
 	{
 		$contact = new Contact($request->all());
 		$contact->save();
+		$mail = [ 
+			'email' => $contact->email,
+			'name' => $contact->name,
+			'subject' => $contact->subject,
+			'message' => $contact->message
+		];
+		Mail::send('emails.contact', ['mail' => $mail], function ($m) use ($mail) {
+            $m->to('sonnylazuardi@gmail.com', 'Sonny Lazuardi')->subject($mail['subject']);
+        });
 		return redirect('/home/contact')
 			->with('alert', 'Terima kasih, pesan Anda sudah terkirim silakan tunggu respon dari kami');
 	}

@@ -36,19 +36,19 @@
                 <h6 class="centered">{{{ Auth::user()->email }}}</h6>
                     
                 <li>
-                    {!!Form::link_menu('admin/about', '<i class="fa fa-question-circle fa-fw"></i> About')!!}
+                    {!!Form::link_menu('admin/about/index', '<i class="fa fa-question-circle fa-fw"></i> About')!!}
                 </li>
                 <li>
-                    {!!Form::link_menu('admin/kanal', '<i class="fa fa-lemon-o fa-fw"></i> Kanal')!!}
+                    {!!Form::link_menu('admin/kanal/index', '<i class="fa fa-lemon-o fa-fw"></i> Kanal')!!}
                 </li>
                 <li>
-                    {!!Form::link_menu('admin/news', '<i class="fa fa-newspaper-o fa-fw"></i> News')!!}
+                    {!!Form::link_menu('admin/news/index', '<i class="fa fa-newspaper-o fa-fw"></i> News')!!}
                 </li>
                 <li>
-                    {!!Form::link_menu('admin/contact', '<i class="fa fa-envelope fa-fw"></i> Contact')!!}
+                    {!!Form::link_menu('admin/contact/index', '<i class="fa fa-envelope fa-fw"></i> Contact')!!}
                 </li>
                 <li>
-                    {!!Form::link_menu('admin/user', '<i class="fa fa-user fa-fw"></i> Users')!!}
+                    {!!Form::link_menu('admin/user/index', '<i class="fa fa-user fa-fw"></i> Users')!!}
                 </li>
 
             </ul>
