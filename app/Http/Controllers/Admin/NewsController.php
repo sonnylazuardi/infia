@@ -39,16 +39,15 @@ class NewsController extends Controller {
 	public function postCreate(Request $request)
 	{
 		$news = new News($request->all());
-		if ($images = $request->input('images')) {
-	    	$old_images = NewsImages::where('news_id', $id)->delete();
+	    $news->save();
+	    if ($images = $request->input('images')) {
 	    	foreach ($images as $item) {
 	    		NewsImages::create([
-	    			'news_id' => $id,
+	    			'news_id' => @$news->id,
 	    			'image'=>$item,
 	    		]);
 	    	}
 	    }
-	    $news->save();
 	    return redirect('/admin/news/index')
 	       ->with('alert', 'News created');
 	}

@@ -56,7 +56,7 @@ class HomeController extends Controller {
 			'message' => $contact->message
 		];
 		Mail::send('emails.contact', ['mail' => $mail], function ($m) use ($mail) {
-            $m->to('sonnylazuardi@gmail.com', 'Sonny Lazuardi')->subject($mail['subject']);
+            $m->to('hello@infia.co', 'Infia Mail')->subject($mail['subject']);
         });
 		return redirect('/home/contact')
 			->with('alert', 'Terima kasih, pesan Anda sudah terkirim silakan tunggu respon dari kami');

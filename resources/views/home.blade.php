@@ -44,7 +44,8 @@
     $(document).ready(function() {
       
       $(".full-image").imgLiquid({
-        fill: false
+        fill: false,
+        verticalAlign: 'top'
       });
 
       $(".item-image").imgLiquid();

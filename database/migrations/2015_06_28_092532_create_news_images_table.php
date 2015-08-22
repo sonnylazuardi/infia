@@ -17,7 +17,6 @@ class CreateNewsImagesTable extends Migration {
 			$table->increments('id');
 			$table->integer('news_id')->unsigned();
 			$table->string('image');
-			$table->foreign('news_id')->references('id')->on('news');
 			$table->timestamps();
 		});
 	}

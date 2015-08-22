@@ -3,7 +3,6 @@
 @section('content')
     <div class="container-fluid kanal-container" id="desktop">
         <div class="kanal">
-            @include('kanal.nav')
             <div class="kanal-content">
                 <div class="kanal-box">
                     {{-- <div class="kanal-img-container"> --}}

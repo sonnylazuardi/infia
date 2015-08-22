@@ -5,7 +5,7 @@
   <div id="page-content-wrapper">
     <div class="padding">
     	<div class="container">
-    		<div style="background:url('{{asset('/img/spongebob.jpg')}}') no-repeat center center;" class="feature-image">
+    		<div style="background:url('{{asset(@$item->image)}}') no-repeat center center;" class="feature-image">
     		</div>
         <div class="img-slider">
           <div class="row row-centered">

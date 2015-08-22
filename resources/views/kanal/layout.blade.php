@@ -14,6 +14,8 @@
   <body>
     
     <div id="wrapper" class="kanal-wrapper">
+
+      @include('kanal.nav')
       
       @include('nav')
       
@@ -30,15 +32,16 @@
 
     @yield('script')
 
+    @include('kanal.script')
     <script>
-      $(document).ready(function() {
-        $('a.kanal-button, .kanal-nav').hover(function() {
-          $('.kanal-nav').fadeIn(100);
-        }, function() {
-          $('.kanal-nav').fadeOut(100);
-        });
-      });
-    </script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+      ga('create', 'UA-66256007-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
   </body>
 </html>

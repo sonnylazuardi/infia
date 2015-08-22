@@ -20,7 +20,7 @@
               <i class="fa fa-phone"></i> 021 - 29305285
             </div>
             <div>
-              <i class="fa fa-instagram"></i> instagram.com/infia.co
+              <i class="fa fa-instagram"></i> <a href="http://instagram.com/infia.co">@infia.co</a>
             </div>
           </div>
 

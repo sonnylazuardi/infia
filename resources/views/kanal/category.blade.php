@@ -11,7 +11,7 @@
 		                </div>
 		                <div style="background-color:{{$item->color}}" class="kanal-single-content">
 		                	<div class="container container-kanal container-small">
-		                		<h2 style="color:{{$item->titlecolor}}" id="instagram-{{$item->id}}-target" class="kanal-single-title">{{$item->title}}</h2>
+		                		<h2 style="color:{{$item->titlecolor}}" id="instagram-{{$item->id}}-target" class="kanal-single-title">{{$item->title}}</h2> <i class="fa fa-chevron-down"></i>
 		                	</div>
 		                	<div style="display:none" class="container container-kanal" show-target="instagram-{{$item->id}}-target" instagram-id="{{$item->instagramId}}">
 			                	<p>{{$item->description}}</p>

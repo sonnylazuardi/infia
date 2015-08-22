@@ -18,6 +18,7 @@ class News extends Model {
         'pinned',
         'slug',
         'image',
+        'usemap', 
     ];
 
     protected $sluggable = [

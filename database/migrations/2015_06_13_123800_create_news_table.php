@@ -19,8 +19,8 @@ class CreateNewsTable extends Migration {
 			$table->string('slug');
 			$table->text('content');
 			$table->boolean('usemap');
-			$table->float('longitude');
-			$table->float('latitude');
+			$table->string('longitude');
+			$table->string('latitude');
 			$table->string('image');
 			$table->timestamps();
 		});
